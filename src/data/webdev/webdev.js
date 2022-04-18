@@ -13,3 +13,4 @@ export default {
     { id: 'vue', image: 'https://simpleicons.org/icons/vue-dot-js.svg', bgColor: '#4FC08D' },
   ],
 };
+

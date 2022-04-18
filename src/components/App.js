@@ -17,6 +17,7 @@ const App = () => {
     face.classList.value = "face";
     back.classList.value = "back";
 
+
     face.src = item.image;
 
     if (section) {
@@ -26,7 +27,5 @@ const App = () => {
     }
   }
 };
-
-App();
 
 export default App;

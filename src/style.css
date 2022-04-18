@@ -1,3 +1,180 @@
+
+/* CSS index */
+.index {
+    position: relative;
+    width: auto;
+    background-image: url("img/Background.jpg");
+    background-size: cover;
+    flex-wrap: wrap;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-family: Cabin Sketch;
+    font-size: 170px;
+    font-weight: 599;
+    letter-spacing: 0;
+    line-height: 150px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    color: #04526C;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.playButton {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#name {
+    display: flex;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #04526C;
+    box-sizing: border-box;
+    border-radius: 15px;
+    width: 900px;
+    height: 158px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    text-align: center;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 78px;
+}
+
+#play {
+    display: flex;
+    color: white;
+    row-gap: 5px;
+    width: 381px;
+    height: 100px;
+    background: linear-gradient(135.37deg, rgba(0, 0, 0, 0.35) 42.86%, rgba(255, 255, 255, 0.35) 134.17%), #3996BC;
+    background-blend-mode: soft-light, normal;
+    box-shadow: -5px -5px 10px #FAFBFF, 5px 5px 10px #A6ABBD;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+}
+
+/* CSS Start */
+.start {
+    position: relative;
+    background-image: url("img/Background.jpg");
+    background-size: cover;
+    flex-wrap: wrap;
+}
+
+h2 {
+    font-family: Atma;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #04526C;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 86px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #04526C;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: -65px;
+}
+
+.level {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: -25px;
+}
+
+#colors {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 5px solid #04526C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-family: Atma;
+    font-style: light;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 155px;
+    color: #04526C;
+}
+
+#animals {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 5px solid #04526C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-family: Atma;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 155px;
+    color: #04526C;
+}
+
+#verbs {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 5px solid #04526C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-family: Atma;
+    font-style: light;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 155px;
+    color: #04526C;
+}
+
+/* CSS Memory Colors */
+
+.memoryColors {
+    position: relative;
+    background-image: url("img/Colors.jpg");
+    background-size: cover;
+    flex-wrap: wrap;
+}
+=======
 .animalBackground {
     background-image: url('animals.jpg');
     background-size: cover;
@@ -57,3 +234,4 @@ h2 {
     font-family: 'Montserrat';
     border-radius: 25px;
 } */
+
