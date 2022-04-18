@@ -1,5 +1,5 @@
 export default {
-  name: 'Frontend Web Dev',
+  name: 'verbs',
   items: [
     { id: 'js', image: 'https://simpleicons.org/icons/javascript.svg', bgColor: '#F7DF1E' },
     { id: 'git', image: 'https://simpleicons.org/icons/git.svg', bgColor: '#F05032' },
