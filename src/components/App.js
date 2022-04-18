@@ -1,26 +1,32 @@
-//
-// Para incluir los diferentes sets de cartas podemos _importar_ el archivo
-// JavasSript que contenga el `export` correspondiente...
-//
-// import pokemon from '../data/pokemon/pokemon.js';
-// console.log(pokemon);
-//
-// O alternativamente podríamos cargar el JSON de forma asíncrona usando
-// `fetch` en el momento que consideremos necesario.
-//
-// fetch('./data/pokemon/pokemon.json')
-//   .then(resp => resp.json())
-//   .then(console.log)
-//   .catch(console.error);
-//
+import animals from "../data/animals/animals.js";
+
+const section = document.getElementById("section");
+
+// const random = () => {
+//   const cardData = data();
+//   cardData.sort(() => Math.random() -0.5);
+//   return cardData;
+// }
 
 const App = () => {
-  const el = document.createElement('div');
+  for (const item of animals.items) {
+    const card = document.createElement("div");
+    const face = document.createElement("img");
+    const back = document.createElement("div");
+    card.classList.value = "card";
+    face.classList.value = "face";
+    back.classList.value = "back";
 
-  el.className = 'App';
-  el.textContent = 'Hola mundo!';
+    face.src = item.image;
 
-  return el;
+    if (section) {
+      section.appendChild(card);
+      card.appendChild(face);
+      card.appendChild(back);
+    }
+  }
 };
+
+App();
 
 export default App;
