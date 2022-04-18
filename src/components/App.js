@@ -51,6 +51,5 @@ const divColor = () => {
 
 
  
-};
 
 export default App;
