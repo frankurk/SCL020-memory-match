@@ -1,3 +1,4 @@
+
 /* CSS index */
 .index {
     position: relative;
@@ -173,3 +174,64 @@ h3 {
     background-size: cover;
     flex-wrap: wrap;
 }
+=======
+.animalBackground {
+    background-image: url('animals.jpg');
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #FFFF;
+    opacity: 0.6;
+    border-radius: 25px;
+    height: 120px;
+    overflow: auto;
+}
+
+h1 {
+    color: #04526c;
+    font-family: 'Cabin Sketch';
+    font-size: 100px;
+}
+
+h2 {
+    color: #04526c;
+    font-family: 'Montserrat';
+    font-size: 40px;
+}
+
+.title {
+    flex-basis: 80%;
+}
+
+.timer {
+    flex-basis: 20%;
+}
+
+.face {
+    height: 200px;
+    width:200px;
+    background-color: aliceblue;
+}
+/* .scoreContainer {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    background-color: rgb(114, 93, 60);
+    border-radius: 25px;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.score {
+    color: #FFFF;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Montserrat';
+    border-radius: 25px;
+} */
+

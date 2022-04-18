@@ -19,8 +19,3 @@ function goToMemory() {
 const colorsArray = App();
 document.getElementById('root').appendChild(App());
 
-for (let i=0; i < colorsArray.length; i++) {
-document.getElementById('cardcolors').appendChild(colorsArray [i]);
-
-console.log(colorsArray)
-}
