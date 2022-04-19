@@ -3,42 +3,42 @@ export default {
   items: [
     {
       id: 'Navy',
-      image: 'https://www.serebii.net/pokemongo/pokemon/001.png',
+      image: '../src/assets/img/Navy.jpg',
       bgColor: '#339933'
     },
     {
       id: 'Navy',
-      image: 'https://www.serebii.net/pokemongo/pokemon/002.png',
+      image: '../src/assets/img/Navy1.jpg',
       bgColor: '#339933'
     },
     {
       id: 'Turquoise',
-      image: 'https://www.serebii.net/pokemongo/pokemon/003.png',
+      image: '../src/assets/img/Turquoise.png',
       bgColor: '#339933'
     },
     {
       id: 'Turquoise',
-      image: 'https://www.serebii.net/pokemongo/pokemon/004.png',
+      image: '../src/assets/img/Turquoise1.png',
       bgColor: '#F05032'
     },
     {
       id: 'Magenta',
-      image: 'https://www.serebii.net/pokemongo/pokemon/005.png',
+      image: '../src/assets/img/Magenta.png',
       bgColor: '#F05032'
     },
     {
       id: 'Magenta',
-      image: 'https://www.serebii.net/pokemongo/pokemon/006.png',
+      image: '../src/assets/img/Magenta1.png',
       bgColor: '#F05032'
     },
     {
       id: 'Peach',
-      image: 'https://www.serebii.net/pokemongo/pokemon/007.png',
+      image: '../src/assets/img/Peach.png',
       bgColor: '#1572B6'
     },
     {
       id: 'Peach',
-      image: 'https://www.serebii.net/pokemongo/pokemon/008.png',
+      image: '../src/assets/img/Peach1.png',
       bgColor: '#1572B6'
     },
   ],

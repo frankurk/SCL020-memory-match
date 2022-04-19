@@ -1,14 +1,24 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
 /* CSS index */
 .index {
     position: relative;
     width: auto;
-    background-image: url("../src/assets/img/Background.jpg");
+    background-image: url("assets/img/Background.jpg");
     background-size: cover;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    display: flex;
 }
 
 h1 {
-    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     font-family: Cabin Sketch;
@@ -77,7 +87,7 @@ h1 {
     position: relative;
     background-image: url("../src/assets/img/Background.jpg");
     background-size: cover;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 h2 {
@@ -110,6 +120,7 @@ h3 {
 
 .level {
     display: flex;
+    position: relative;
     flex-flow: row wrap;
     text-align: center;
     align-items: center;
@@ -165,6 +176,72 @@ h3 {
     color: #04526C;
 }
 
+/* CSS General */
+.header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #FFFF;
+    opacity: 0.6;
+    border-radius: 25px;
+    height: 120px;
+}
+
+.title {
+    flex-basis: 95%;
+    color: #04526c;
+    font-family: 'Cabin Sketch';
+    font-size: 100px;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+.timer {
+    flex-basis: 10%;
+    color: #04526c;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    position: right;
+}
+
+/* CSS Cards  */
+
+section {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(2, 8rem);
+    grid-gap: 100px;
+    perspective: 800px;
+    padding: 40px;
+}
+
+.face {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: aliceblue;
+    border: 5px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s ease;
+    /*Agregar style*/
+    transform: rotateY(0deg);
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
+
 /* CSS Memory Colors */
 
 .memoryColors {
@@ -174,56 +251,8 @@ h3 {
     flex-wrap: wrap;
 }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    text-align: center;
-    align-items: center;
-    background-color: #FFFF;
-    opacity: 0.6;
-    border-radius: 25px;
-    height: 120px;
-}
-
-.title {
-    flex-basis: 80%;
-    color: #04526c;
-    font-family: 'Cabin Sketch';
-    font-size: 100px;
-}
-
-.timer {
-    flex-basis: 20%;
-    color: #04526c;
-    font-family: 'Montserrat';
-    font-size: 40px;
-}
-
-section {
-    display: flex;
-    flex-flow: row wrap;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
-    padding: 15%;
-    gap: 20px;
-}
-
-.face {
-    height: 200px;
-    flex-basis: 00px;
-    background-color: aliceblue;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-}
-
-.back {
+.backColors {
+    position: absolute;
     height: 200px;
     width: 200px;
     background: conic-gradient(from 180deg at 50% 50%, #FFF2C6 0deg, #D8A9FF 360deg), #FFFFFF;
@@ -231,23 +260,25 @@ section {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
+    backface-visibility: hidden;
 }
 
-.score {
-    font-family: Atma;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 97px;
+.scoreColors {
+    position: relative;
     display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: #04526C;
     width: 381px;
-    height: 97px;
+    height: 77px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 72px;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
     background: #E1D7FF;
     border-radius: 15px;
+    flex-direction: flex-end;
 }
 
 /* CSS Memory Animals */
@@ -257,121 +288,72 @@ section {
     background-size: cover;
 }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    text-align: center;
-    align-items: center;
-    background-color: #FFFF;
-    opacity: 0.6;
-    border-radius: 25px;
-    height: 120px;
-}
-
-.title {
-    flex-basis: 80%;
-    color: #04526c;
-    font-family: 'Cabin Sketch';
-    font-size: 100px;
-}
-
-.timer {
-    flex-basis: 20%;
-    color: #04526c;
-    font-family: 'Montserrat';
-    font-size: 40px;
-}
-
-.face {
-    height: 200px;
-    flex-basis: 200px;
-    background-color: aliceblue;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-}
-
-.back {
+.backAnimals {
+    position: absolute;
     height: 200px;
     width: 200px;
-    background: conic-gradient(from 180deg at 50% 50%, #FFF2C6 0deg, #D8A9FF 360deg), #FFFFFF;
+    background: conic-gradient(from 180deg at 50% 50%, #EDFF7B 0deg, #ED6961 360deg), #FFFFFF;
     border: 5px solid #000000;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
+    backface-visibility: hidden;
+}
+
+.scoreAnimals {
+    position: relative;
+    display: flex;
+    width: 381px;
+    height: 77px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 72px;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #FFCDBD;
+    border-radius: 15px;
+    flex-direction: flex-end;
 }
 
 /* CSS Memory Verbs */
 
 .memoryVerbs {
     position: relative;
-    background-image: url("../src/assets/Verbs.jpg");
+    background-image: url("assets/img/Verbs.jpg");
     background-size: cover;
     flex-wrap: wrap;
     width: auto;
 }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    text-align: center;
-    align-items: center;
-    background-color: #FFFF;
-    opacity: 0.6;
-    border-radius: 25px;
-    height: 120px;
-}
-
-.title {
-    flex-basis: 80%;
-    color: #04526c;
-    font-family: 'Cabin Sketch';
-    font-size: 100px;
-}
-
-.timer {
-    flex-basis: 20%;
-    color: #04526c;
-    font-family: 'Montserrat';
-    font-size: 40px;
-}
-
-.face {
-    height: 200px;
-    flex-basis: 200px;
-    background-color: aliceblue;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-}
-
-.back {
+.backVerbs {
+    position: absolute;
     height: 200px;
     width: 200px;
-    background: conic-gradient(from 180deg at 50% 50%, #FFF2C6 0deg, #D8A9FF 360deg), #FFFFFF;
+    background: conic-gradient(from 180deg at 50% 50%, #BCFFF3 0deg, #3ACBEA 360deg), #FFFFFF;
     border: 5px solid #000000;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
+    backface-visibility: hidden;
 }
 
-/* .scoreContainer {
+.scoreVerbs {
+    position: relative;
     display: flex;
-    align-content: center;
-    text-align: center;
-    background-color: rgb(114, 93, 60);
-    border-radius: 25px;
-    justify-content: space-around;
-    margin-bottom: 50px;
-}
-.score {
-    color: #FFFF;
-    text-align: center;
-    font-size: 35px;
+    width: 381px;
+    height: 77px;
     font-family: 'Montserrat';
-    border-radius: 25px;
-} */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 72px;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #2DB0CC;
+    border-radius: 15px;
+    flex-direction: flex-end;
+}

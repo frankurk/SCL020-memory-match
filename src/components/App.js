@@ -1,13 +1,9 @@
-import colors from '../data/colors/colors.js';
-import animals from "../data/animals/animals.js";
-import verbs from '../data/verbs/verbs.js';
+// const random = () => {
+//   const cardData = data();
+//   cardData.sort(() => Math.random() -0.5);
+//   return cardData;
+// }
 
-//document.getElementById("play").onclick = goToMemory;
-//function goToMemory() {
-//location.href = "start.html";
-//let name = document.getElementById("name").value;
-//localStorage.setItem("name", name);
-//};
 
 //function gettingUserName() {
 // console.log(localStorage.getElementById("name").value);
@@ -15,16 +11,15 @@ import verbs from '../data/verbs/verbs.js';
 //}
 //gettingUserName();
 
-//const colorsArray = App();
+import colors from '../data/colors/colors.js';
+import animals from "../data/animals/animals.js";
+import verbs from '../data/verbs/verbs.js';
+
 const colorssection = document.getElementById("colorssection");
 const animalssection = document.getElementById("animalssection");
 const verbssection = document.getElementById("verbssection");
 
-// const random = () => {
-//   const cardData = data();
-//   cardData.sort(() => Math.random() -0.5);
-//   return cardData;
-// }
+
 
 const App = () => {
   if (colorssection) {
@@ -34,13 +29,16 @@ const App = () => {
       const back = document.createElement("div");
       card.classList.value = "card";
       face.classList.value = "face";
-      back.classList.value = "back";
+      back.classList.value = "backColors";
 
       face.src = item.image;
 
       colorssection.appendChild(card);
       card.appendChild(face);
       card.appendChild(back);
+      card.addEventListener("click", (e) => {
+        card.classList.toggle("toggleCard");
+      });
     }
   };
   if (animalssection) {
@@ -50,13 +48,18 @@ const App = () => {
       const back = document.createElement("div");
       card.classList.value = "card";
       face.classList.value = "face";
-      back.classList.value = "back";
+      back.classList.value = "backAnimals";
 
       face.src = item.image;
 
       animalssection.appendChild(card);
       card.appendChild(face);
       card.appendChild(back);
+
+      card.addEventListener("click", (e) => {
+        card.classList.toggle("toggleCard");
+      });
+
     }
   };
 
@@ -67,16 +70,23 @@ const App = () => {
       const back = document.createElement("div");
       card.classList.value = "card";
       face.classList.value = "face";
-      back.classList.value = "back";
+      back.classList.value = "backVerbs";
 
       face.src = item.image;
 
       verbssection.appendChild(card);
       card.appendChild(face);
       card.appendChild(back);
+
+      card.addEventListener("click", (e) => {
+        card.classList.toggle("toggleCard");
+      });
+
     };
   };
+
+
 }
 
 
-    export default App;
+export default App;

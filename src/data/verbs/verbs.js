@@ -9,8 +9,6 @@ export default {
     { id: 'npm', image: 'https://simpleicons.org/icons/npm.svg', bgColor: '#CB3837' },
     { id: 'yarn', image: 'https://simpleicons.org/icons/yarn.svg', bgColor: '#2C8EBB' },
     { id: 'react', image: 'https://simpleicons.org/icons/react.svg', bgColor: '#61DAFB' },
-    { id: 'angular', image: 'https://simpleicons.org/icons/angular.svg', bgColor: '#DD0031' },
-    { id: 'vue', image: 'https://simpleicons.org/icons/vue-dot-js.svg', bgColor: '#4FC08D' },
   ],
 };
 
