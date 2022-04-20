@@ -1,6 +1,6 @@
-import colors from '../data/colors/colors.js';
+import colors from "../data/colors/colors.js";
 import animals from "../data/animals/animals.js";
-import verbs from '../data/verbs/verbs.js';
+import verbs from "../data/verbs/verbs.js";
 
 const colorssection = document.getElementById("colorssection");
 const animalssection = document.getElementById("animalssection");
@@ -27,7 +27,7 @@ const App = () => {
         card.classList.toggle("toggleCard");
       });
     }
-  };
+  }
   if (animalssection) {
     const randomizedItems = animals.items.sort(() => Math.random() - 0.5);
     for (const item of randomizedItems) {
@@ -47,9 +47,8 @@ const App = () => {
       card.addEventListener("click", (e) => {
         card.classList.toggle("toggleCard");
       });
-
     }
-  };
+  }
 
   if (verbssection) {
     const randomizedItems = verbs.items.sort(() => Math.random() - 0.5);
@@ -70,12 +69,8 @@ const App = () => {
       card.addEventListener("click", (e) => {
         card.classList.toggle("toggleCard");
       });
-
-    };
-  };
-
-
-}
-
+    }
+  }
+};
 
 export default App;
