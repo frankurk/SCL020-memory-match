@@ -212,11 +212,13 @@ h3 {
 section {
     display: grid;
     position: relative;
+    flex-wrap: wrap;
     grid-template-columns: repeat(4, 8rem);
     grid-template-rows: repeat(2, 8rem);
     grid-gap: 100px;
-    perspective: 800px;
-    padding: 40px;
+    perspective: 1000px;
+    padding: 30px;
+    transform: rotateY(0deg);
 }
 
 .face {
@@ -228,18 +230,20 @@ section {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
+    transform: scaleX(-1);
 }
 
 .card {
     position: relative;
     transform-style: preserve-3d;
-    transition: all 2s ease;
-    /*Agregar style*/
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: rotateY(0deg);
+    transform: rotateX(0deg);
 }
 
 .toggleCard {
     transform: rotateY(180deg);
+    position: relative;
 }
 
 /* CSS Memory Colors */
@@ -252,7 +256,7 @@ section {
 }
 
 .backColors {
-    position: absolute;
+    position: relative;
     height: 200px;
     width: 200px;
     background: conic-gradient(from 180deg at 50% 50%, #FFF2C6 0deg, #D8A9FF 360deg), #FFFFFF;
