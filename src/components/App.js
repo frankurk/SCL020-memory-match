@@ -5,6 +5,41 @@ import verbs from '../data/verbs/verbs.js';
 const colorssection = document.getElementById("colorssection");
 const animalssection = document.getElementById("animalssection");
 const verbssection = document.getElementById("verbssection");
+const buttonPlay = document.getElementById("play");
+//const gettingUserName = document.getElementById("name");
+const buttonColors = document.getElementById("buttonColors");
+const buttonAnimals = document.getElementById("buttonAnimals");
+const buttonVerbs = document.getElementById("buttonVerbs");
+
+if (buttonPlay){
+  document.getElementById("play").onclick = function () {
+ location.href = "start.html";
+  let name = document.getElementById("name").value;
+  localStorage.setItem("name", name);
+};
+}
+
+//if (function gettingUserName) => {
+ //console.log(localStorage.getItem("name").value);
+ // document.getElementById("greeting").innerHTML = "¡Hola" + localStorage.getItem("name") + "!";
+
+if (buttonColors){
+document.getElementById("buttonColors").onclick = function () {
+  location.href = 'memorycolors.html';
+};
+}
+
+if (buttonAnimals){
+  document.getElementById("buttonAnimals").onclick = function () {
+ location.href = 'memoryanimals.html';
+};
+}
+
+if (buttonVerbs){
+  document.getElementById("buttonVerbs").onclick = function () {
+ location.href = 'memoryverbs.html';
+};
+}
 
 const App = () => {
   if (colorssection) {
