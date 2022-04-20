@@ -85,7 +85,7 @@ h1 {
 /* CSS Start */
 .start {
     position: relative;
-    background-image: url("../src/assets/img/Background.jpg");
+    background-image: url("assets/img/Background.jpg");
     background-size: cover;
     flex-wrap: nowrap;
 }
@@ -250,7 +250,7 @@ section {
 
 .memoryColors {
     position: relative;
-    background-image: url("../src/assets/img/Colors.jpg");
+    background-image: url("assets/img/Colors.jpg");
     background-size: cover;
     flex-wrap: wrap;
 }
@@ -288,7 +288,7 @@ section {
 /* CSS Memory Animals */
 
 .animalBackground {
-    background-image: url("../src/assets/img/animals.jpg");
+    background-image: url("assets/img/animals.jpg");
     background-size: cover;
 }
 
