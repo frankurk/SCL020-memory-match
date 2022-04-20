@@ -29,7 +29,8 @@ const App = () => {
     }
   };
   if (animalssection) {
-    for (const item of animals.items) {
+    const randomizedItems = animals.items.sort(() => Math.random() - 0.5);
+    for (const item of randomizedItems) {
       const card = document.createElement("div");
       const face = document.createElement("img");
       const back = document.createElement("div");
@@ -51,7 +52,8 @@ const App = () => {
   };
 
   if (verbssection) {
-    for (const item of verbs.items) {
+    const randomizedItems = verbs.items.sort(() => Math.random() - 0.5);
+    for (const item of randomizedItems) {
       const card = document.createElement("div");
       const face = document.createElement("img");
       const back = document.createElement("div");
