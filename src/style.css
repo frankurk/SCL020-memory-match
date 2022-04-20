@@ -318,8 +318,8 @@ section {
 
 .face {
     position: absolute;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     background-color: aliceblue;
     border: 5px solid #000000;
     box-sizing: border-box;
@@ -329,6 +329,8 @@ section {
 }
 
 .card {
+    height: 200px;
+    width: 200px;
     position: relative;
     transform-style: preserve-3d;
     transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -352,8 +354,8 @@ section {
 
 .backColors {
     position: relative;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     background: conic-gradient(from 180deg at 50% 50%, #FFF2C6 0deg, #D8A9FF 360deg), #FFFFFF;
     border: 5px solid #000000;
     box-sizing: border-box;
@@ -389,8 +391,8 @@ section {
 
 .backAnimals {
     position: absolute;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     background: conic-gradient(from 180deg at 50% 50%, #EDFF7B 0deg, #ED6961 360deg), #FFFFFF;
     border: 5px solid #000000;
     box-sizing: border-box;
@@ -429,8 +431,8 @@ section {
 
 .backVerbs {
     position: absolute;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     background: conic-gradient(from 180deg at 50% 50%, #BCFFF3 0deg, #3ACBEA 360deg), #FFFFFF;
     border: 5px solid #000000;
     box-sizing: border-box;

@@ -1,14 +1,14 @@
 export default {
   name: 'verbs',
   items: [
-    { id: 'js', image: 'https://simpleicons.org/icons/javascript.svg', bgColor: '#F7DF1E' },
-    { id: 'git', image: 'https://simpleicons.org/icons/git.svg', bgColor: '#F05032' },
-    { id: 'css', image: 'https://simpleicons.org/icons/css3.svg', bgColor: '#1572B6' },
-    { id: 'html', image: 'https://simpleicons.org/icons/html5.svg', bgColor: '#E34F26' },
-    { id: 'node', image: 'https://simpleicons.org/icons/node-dot-js.svg', bgColor: '#339933' },
-    { id: 'npm', image: 'https://simpleicons.org/icons/npm.svg', bgColor: '#CB3837' },
-    { id: 'yarn', image: 'https://simpleicons.org/icons/yarn.svg', bgColor: '#2C8EBB' },
-    { id: 'react', image: 'https://simpleicons.org/icons/react.svg', bgColor: '#61DAFB' },
+    { id: 'Draw', image: 'assets/img/Draw.png', bgColor: '#F7DF1E' },
+    { id: 'Draw', image: 'assets/img/Draw1.png', bgColor: '#F05032' },
+    { id: 'Drink', image: 'assets/img/Drink.png', bgColor: '#1572B6' },
+    { id: 'Drink', image: 'assets/img/Drink1.png', bgColor: '#E34F26' },
+    { id: 'Cut', image: 'assets/img/Cut.png', bgColor: '#339933' },
+    { id: 'Cut', image: 'assets/img/Cut1.png', bgColor: '#CB3837' },
+    { id: 'Have', image: 'assets/img/Have.png', bgColor: '#2C8EBB' },
+    { id: 'Have', image: 'assets/img/Have1.png', bgColor: '#61DAFB' },
   ],
 };
 
