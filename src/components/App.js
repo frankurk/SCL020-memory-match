@@ -1,16 +1,3 @@
-// const random = () => {
-//   const cardData = data();
-//   cardData.sort(() => Math.random() -0.5);
-//   return cardData;
-// }
-
-
-//function gettingUserName() {
-// console.log(localStorage.getElementById("name").value);
-// document.getElementById("greeting").value = "¡Hola" + localStorage.getItem("name") + "!";
-//}
-//gettingUserName();
-
 import colors from '../data/colors/colors.js';
 import animals from "../data/animals/animals.js";
 import verbs from '../data/verbs/verbs.js';
@@ -19,11 +6,10 @@ const colorssection = document.getElementById("colorssection");
 const animalssection = document.getElementById("animalssection");
 const verbssection = document.getElementById("verbssection");
 
-
-
 const App = () => {
   if (colorssection) {
-    for (const item of colors.items) {
+    const randomizedItems = colors.items.sort(() => Math.random() - 0.5);
+    for (const item of randomizedItems) {
       const card = document.createElement("div");
       const face = document.createElement("img");
       const back = document.createElement("div");
@@ -36,6 +22,7 @@ const App = () => {
       colorssection.appendChild(card);
       card.appendChild(face);
       card.appendChild(back);
+
       card.addEventListener("click", (e) => {
         card.classList.toggle("toggleCard");
       });
