@@ -6,39 +6,45 @@ const colorssection = document.getElementById("colorssection");
 const animalssection = document.getElementById("animalssection");
 const verbssection = document.getElementById("verbssection");
 const buttonPlay = document.getElementById("play");
-//const gettingUserName = document.getElementById("name");
+const getUserName = document.getElementById("hi");
 const buttonColors = document.getElementById("buttonColors");
+//var scoreColors = 0;
 const buttonAnimals = document.getElementById("buttonAnimals");
 const buttonVerbs = document.getElementById("buttonVerbs");
 
-if (buttonPlay){
+if (buttonPlay) {
   document.getElementById("play").onclick = function () {
- location.href = "start.html";
-  let name = document.getElementById("name").value;
-  localStorage.setItem("name", name);
-};
+    location.href = "start.html";
+    let name = document.getElementById("name").value;
+    localStorage.setItem("name", name);
+  };
 }
 
-//if (function gettingUserName) => {
- //console.log(localStorage.getItem("name").value);
- // document.getElementById("greeting").innerHTML = "¡Hola" + localStorage.getItem("name") + "!";
+if (getUserName) {
+  console.log(getUserName)
+  window.onload = function () {
+    document.getElementById("hi").innerHTML = ("¡Hola " + localStorage.getItem("name") + "!");
+  };
 
-if (buttonColors){
-document.getElementById("buttonColors").onclick = function () {
-  location.href = 'memorycolors.html';
-};
 }
 
-if (buttonAnimals){
+
+if (buttonColors) {
+  document.getElementById("buttonColors").onclick = function () {
+    location.href = 'memorycolors.html';
+  };
+}
+
+if (buttonAnimals) {
   document.getElementById("buttonAnimals").onclick = function () {
- location.href = 'memoryanimals.html';
-};
+    location.href = 'memoryanimals.html';
+  };
 }
 
-if (buttonVerbs){
+if (buttonVerbs) {
   document.getElementById("buttonVerbs").onclick = function () {
- location.href = 'memoryverbs.html';
-};
+    location.href = 'memoryverbs.html';
+  };
 }
 
 const App = () => {
@@ -61,8 +67,17 @@ const App = () => {
       card.addEventListener("click", (e) => {
         card.classList.toggle("toggleCard");
       });
+
+      //function drawScore() {
+      // ctx.font = "16px Arial";
+      //ctx.fillStyle = "#0095DD";
+      // ctx.fillText("Score: " + score, 8, 20);
+      //}
+
     }
+
   }
+
   if (animalssection) {
     const randomizedItems = animals.items.sort(() => Math.random() - 0.5);
     for (const item of randomizedItems) {
