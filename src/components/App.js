@@ -53,6 +53,23 @@ if (buttonVerbs) {
 }
 
 const App = () => {
+  let isWaiting = false;
+
+  const checkMaxCards = (e) => {
+    const flippedCardAnimals = document.querySelectorAll(".toggleCard");
+      console.log(flippedCardAnimals);
+      if (flippedCardAnimals.length > 1){
+        isWaiting = true;
+        flippedCardAnimals.forEach((card) => { 
+          setTimeout(() => {
+            card.classList.remove("toggleCard");
+            isWaiting = false;
+          }, 2000);
+        })
+        
+      }
+  }
+
   if (colorssection) {
     const randomizedItems = colors.items.sort(() => Math.random() - 0.5);
     for (const item of randomizedItems) {
@@ -88,7 +105,7 @@ const App = () => {
   };
 
 
-
+  
   if (animalssection) {
     const randomizedItems = animals.items.sort(() => Math.random() - 0.5);
     for (const item of randomizedItems) {
@@ -104,21 +121,24 @@ const App = () => {
       animalssection.appendChild(card);
       card.appendChild(face);
       card.appendChild(back);
-
+      
       card.addEventListener("click", (e) => {
+        if (!isWaiting) {
         card.classList.toggle("toggleCard");
+        checkMaxCards();
+        }
       });
     }
+//agregar nombre distinto a toggle a cartas match elemento independiente
 
     if (checkCardAnimals) {
       const checkCardAnimals = (e) => {
       console.log(e);
       const clickedCardAnimals = e.target;
       clickedCardAnimals.classList.add("flipped");
-      const flippedCardAnimals = document.querySelectorAll(".flipped");
-      console.log(flippedCardAnimals);
+      
 
-        if (flippedCardAnimals.length ===2){
+        if (flippedCardAnimals.length > 1){ 
           if (
           flippedCardAnimals[0].getAttribute("id") ===
           flippedCardAnimals[1].getAttribute("id")
