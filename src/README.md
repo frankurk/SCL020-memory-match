@@ -16,3 +16,8 @@
 https://www.figma.com/proto/kGE3phHPuPqzVAdkOte7ug/Memory-Match?node-id=0%3A1&scaling=contain&page-id=0%3A1&starting-point-node-id=6%3A2
 
 # Historias de usuario
+    - Constanza, quiere reforzar en casa los conocimientos adquiridos en clases para poder subir sus notas, porque sus padres le prometieron adoptar un gato si subía sus promedios.
+    - Daniel, quiere aprender nuevas palabras para hablar inglés, porque le gustan mucho los idiomas.
+    - Elizabeth, quiere aumentar su vocabulario jugando para poder entender los juegos de play de su hermana, porque quiere jugar con ella.
+    - Miguel, quiere estudiar en los recreos en la biblioteca, para no olvidar lo aprendido en clases, porque inglés es su asignatura favorita.
+    - Carolina, quiere memorizar el vocabulario que entrará en la próxima prueba, porque quiere sacarse un 7.
