@@ -8,10 +8,12 @@ const verbssection = document.getElementById("verbssection");
 const buttonPlay = document.getElementById("play");
 const getUserName = document.getElementById("hi");
 const buttonColors = document.getElementById("buttonColors");
+
 //var scoreColors = 0;
 const buttonAnimals = document.getElementById("buttonAnimals");
 const buttonVerbs = document.getElementById("buttonVerbs");
 
+//Botón jugar obtiene valor para próxima página y dirige a la siguiente página
 if (buttonPlay) {
   document.getElementById("play").onclick = function () {
     location.href = "start.html";
@@ -20,6 +22,7 @@ if (buttonPlay) {
   };
 }
 
+// Muestra el valor de la página anterior
 if (getUserName) {
   console.log(getUserName)
   window.onload = function () {
@@ -28,19 +31,21 @@ if (getUserName) {
 
 }
 
-
+// Dirige al Memory de Colores
 if (buttonColors) {
   document.getElementById("buttonColors").onclick = function () {
     location.href = 'memorycolors.html';
   };
 }
 
+// Dirige al Memory de Animales
 if (buttonAnimals) {
   document.getElementById("buttonAnimals").onclick = function () {
     location.href = 'memoryanimals.html';
   };
 }
 
+// Dirige al Memory de Verbos
 if (buttonVerbs) {
   document.getElementById("buttonVerbs").onclick = function () {
     location.href = 'memoryverbs.html';
@@ -68,15 +73,21 @@ const App = () => {
         card.classList.toggle("toggleCard");
       });
 
-      //function drawScore() {
-      // ctx.font = "16px Arial";
-      //ctx.fillStyle = "#0095DD";
+      // function scoreColors() {
+      // for (
+      //   score++;
+      //};
+      //function drawScoreColors() {
+      //  ctx.font = "60px Montserrat";
+      // ctx.fillStyle = "#0095DD";
       // ctx.fillText("Score: " + score, 8, 20);
-      //}
+      //};
 
-    }
 
-  }
+    };
+  };
+
+
 
   if (animalssection) {
     const randomizedItems = animals.items.sort(() => Math.random() - 0.5);
@@ -98,7 +109,40 @@ const App = () => {
         card.classList.toggle("toggleCard");
       });
     }
-  }
+
+    if (checkCardAnimals) {
+      const checkCardAnimals = (e) => {
+      console.log(e);
+      const clickedCardAnimals = e.target;
+      clickedCardAnimals.classList.add("flipped");
+      const flippedCardAnimals = document.querySelectorAll(".flipped");
+      console.log(flippedCardAnimals);
+
+        if (flippedCardAnimals.length ===2){
+          if (
+          flippedCardAnimals[0].getAttribute("id") ===
+          flippedCardAnimals[1].getAttribute("id")
+          )
+          {
+            console.log("match");
+            flippedCardAnimals.forEach((card) =>{
+              card.classList.remove("flipped");
+              card.style.pointerEvents = "none";
+            });
+          }
+
+          else {
+            console.log("wrong");
+            flippedCardAnimals.forEach((card) => {
+              card.classList.remove("flipped");
+              setTimeout(() => card.classList.remove("toggleCard"), 1000);
+            });
+          }
+          
+        }
+      }  
+    };
+  };
 
   if (verbssection) {
     const randomizedItems = verbs.items.sort(() => Math.random() - 0.5);
@@ -121,6 +165,7 @@ const App = () => {
       });
     }
   }
+
 };
 
 export default App;

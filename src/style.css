@@ -288,7 +288,7 @@ h3 {
 .title {
     flex-basis: 95%;
     color: #04526c;
-    font-family: 'Cabin Sketch';
+    font-family: Cabin Sketch;
     font-size: 100px;
     justify-content: flex-end;
     flex-wrap: nowrap;
@@ -297,7 +297,7 @@ h3 {
 .timer {
     flex-basis: 10%;
     color: #04526c;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     font-size: 40px;
     position: right;
 }
@@ -369,7 +369,7 @@ section {
     display: flex;
     width: 381px;
     height: 77px;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
     font-size: 60px;
@@ -406,7 +406,7 @@ section {
     display: flex;
     width: 381px;
     height: 77px;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
     font-size: 60px;
@@ -446,7 +446,7 @@ section {
     display: flex;
     width: 381px;
     height: 77px;
-    font-family: 'Montserrat';
+    font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
     font-size: 60px;
