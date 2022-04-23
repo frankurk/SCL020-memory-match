@@ -73,8 +73,10 @@ const App = () => {
       card.appendChild(back);
 
       card.addEventListener("click", (e) => {
-        card.classList.toggle("toggleCard");
-        checkCards(e);
+        if (!isWaiting) {
+          card.classList.toggle("toggleCard");
+          checkCards(e);
+        }
       });
 
       // function scoreColors() {
@@ -132,8 +134,10 @@ const App = () => {
         card.appendChild(back);
 
         card.addEventListener("click", (e) => {
-          card.classList.toggle("toggleCard");
-          checkCards(e);
+          if (!isWaiting) {
+            card.classList.toggle("toggleCard");
+            checkCards(e);
+          }
         });
       }
     }
