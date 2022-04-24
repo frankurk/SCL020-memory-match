@@ -115,31 +115,30 @@ const App = () => {
         }
       });
     }
+  }
+  if (verbssection) {
+    const randomizedItems = verbs.items.sort(() => Math.random() - 0.5);
+    for (const item of randomizedItems) {
+      const card = document.createElement("div");
+      const face = document.createElement("img");
+      const back = document.createElement("div");
+      card.classList.value = "card";
+      face.classList.value = "face";
+      back.classList.value = "backVerbs";
 
-    if (verbssection) {
-      const randomizedItems = verbs.items.sort(() => Math.random() - 0.5);
-      for (const item of randomizedItems) {
-        const card = document.createElement("div");
-        const face = document.createElement("img");
-        const back = document.createElement("div");
-        card.classList.value = "card";
-        face.classList.value = "face";
-        back.classList.value = "backVerbs";
+      face.src = item.image;
+      card.setAttribute("id", item.id);
 
-        face.src = item.image;
-        card.setAttribute("id", item.id);
+      verbssection.appendChild(card);
+      card.appendChild(face);
+      card.appendChild(back);
 
-        verbssection.appendChild(card);
-        card.appendChild(face);
-        card.appendChild(back);
-
-        card.addEventListener("click", (e) => {
-          if (!isWaiting) {
-            card.classList.toggle("toggleCard");
-            checkCards(e);
-          }
-        });
-      }
+      card.addEventListener("click", (e) => {
+        if (!isWaiting) {
+          card.classList.toggle("toggleCard");
+          checkCards(e);
+        }
+      });
     }
   }
 };
