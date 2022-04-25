@@ -9,13 +9,17 @@ const buttonPlay = document.getElementById("play");
 const getUserName = document.getElementById("hi");
 const congrats = document.getElementById("congrats");
 const buttonColors = document.getElementById("buttonColors");
-let counter = 0;
-//let match = 8;
-//let scoreText = document.querySelector("score");
 const buttonAnimals = document.getElementById("buttonAnimals");
 const buttonVerbs = document.getElementById("buttonVerbs");
 const time = document.getElementById("timer");
 let firstClick = false;
+let counter = 0;
+const congratulations = document.getElementById("congratulations");
+const playAgain = document.getElementById("playAgain");
+const nextLevelAnimals = document.getElementById("nextLevelAnimals");
+const nextLevelVerbs = document.getElementById("nextLevelVerbs");
+const goToStart = document.getElementById("goToStart");
+
 
 //Botón jugar obtiene valor para próxima página y dirige a la siguiente página
 if (buttonPlay) {
@@ -211,5 +215,33 @@ const checkCards = (e) => {
 };
 
 //Timer
+if (congratulations) {
+  window.onload = function () {
+    document.getElementById("congratulations").innerHTML =
+      "¡Felicidades " + localStorage.getItem("name") + "!";
+  };
+}
+
+/* if (playAgain) {
+  document.getElementById("playAgain").onclick = window.location.reload();
+}  */
+
+if (nextLevelAnimals) {
+  document.getElementById("nextLevelAnimals").onclick = function () {
+    location.href = "memoryanimals.html";
+  }
+}
+
+if (nextLevelVerbs) {
+  document.getElementById("nextLevelVerbs").onclick = function () {
+    location.href = "memoryverbs.html";
+  }
+}
+
+if (goToStart) {
+  document.getElementById("goToStart").onclick = function () {
+    location.href = "start.html";
+  }
+}
 
 export default App;
