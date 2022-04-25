@@ -58,7 +58,7 @@ if (buttonVerbs) {
 //Felicitar con el nombre
 if (congrats) {
   window.onload = function () {
-    document.getElementById("congratulations").innerHTML =
+    document.getElementById("congrats").innerHTML =
       `¡Felicidades ${localStorage.getItem("name")}!`;
   };
 }
