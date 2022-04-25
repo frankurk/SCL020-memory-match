@@ -461,3 +461,69 @@ section {
     border-radius: 15px;
     flex-direction: flex-end;
 }
+
+.modal {
+  position: absolute;
+  width: 1202px;
+  height: 733px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 6px solid #000000;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+.congratulations {
+  font-family: 'Atma';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 178px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526C;
+}
+
+.finalScore {
+  font-family: 'Atma';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 130px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526C;
+}
+
+.modalButton {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  border-radius: 3px;
+  text-decoration: none;
+  background: linear-gradient(135.37deg, rgba(0, 0, 0, 0.35) 42.86%, rgba(255, 255, 255, 0.35) 134.17%), #3996BC;
+  border: none;
+  border-bottom: 5px solid #256680;
+  text-shadow: 0px -2px #425d67;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.modalButton:hover,
+.modalButton:active {
+  -webkit-transform: translate(0px, 5px);
+  -ms-transform: translate(0px, 5px);
+  transform: translate(0px, 5px);
+  border-bottom: 1px solid #256680;
+}
