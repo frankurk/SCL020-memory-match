@@ -7,15 +7,15 @@ const animalssection = document.getElementById("animalssection");
 const verbssection = document.getElementById("verbssection");
 const buttonPlay = document.getElementById("play");
 const getUserName = document.getElementById("hi");
+const congrats = document.getElementById("congrats");
 const buttonColors = document.getElementById("buttonColors");
 let counter = 0;
-//let match = 8; 
+//let match = 8;
 //let scoreText = document.querySelector("score");
 const buttonAnimals = document.getElementById("buttonAnimals");
 const buttonVerbs = document.getElementById("buttonVerbs");
 const time = document.getElementById("timer");
 let firstClick = false;
-
 
 //Botón jugar obtiene valor para próxima página y dirige a la siguiente página
 if (buttonPlay) {
@@ -30,7 +30,7 @@ if (buttonPlay) {
 if (getUserName) {
   window.onload = function () {
     document.getElementById("hi").innerHTML =
-      "¡Hola " + localStorage.getItem("name") + "!";
+      `¡Hola ${localStorage.getItem("name")}!`;
   };
 }
 
@@ -55,9 +55,20 @@ if (buttonVerbs) {
   };
 }
 
+//Felicitar con el nombre
+if (congrats) {
+  window.onload = function () {
+    document.getElementById("congrats").innerHTML =
+      `¡Felicidades ${localStorage.getItem("name")}!`;
+  };
+}
+
+
 //Da tiempo entre volteo de cartas
 let isWaiting = false;
 
+//Modal
+const modal = document.querySelector("#modal");
 
 const App = () => {
   //Memory Colors
@@ -114,7 +125,7 @@ const App = () => {
     }
   }
 
-  // Memory Verbos  
+  // Memory Verbos
   if (verbssection) {
     const randomizedItems = verbs.items.sort(() => Math.random() - 0.5);
     for (const item of randomizedItems) {
@@ -132,7 +143,6 @@ const App = () => {
       card.appendChild(face);
       card.appendChild(back);
 
-
       card.addEventListener("click", (e) => {
         if (!isWaiting) {
           card.classList.toggle("toggleCard");
@@ -144,19 +154,19 @@ const App = () => {
         if (time) {
           let secs = 0;
           let mins = 0;
-          let SS
-          let MM
+          let SS;
+          let MM;
           setInterval(() => {
-            secs++
+            secs++;
             if (secs == 60) {
               secs = 0;
-              mins++
+              mins++;
             }
 
-            secs < 10 ? SS = `0${secs}` : SS = `${secs}`
-            mins < 10 ? MM = `0${secs}` : SS = `${mins}`
+            secs < 10 ? (SS = `0${secs}`) : (SS = `${secs}`);
+            mins < 10 ? (MM = `0${secs}`) : (SS = `${mins}`);
 
-            document.getElementsByClassName("timer").innerHTML = `$(MM):$(SS)`
+            document.getElementsByClassName("timer").innerHTML = `$(MM):$(SS)`;
           }, 1000);
         }
       }
@@ -169,6 +179,7 @@ const checkCards = (e) => {
   const clickedCard = e.target;
   clickedCard.classList.add("flipped");
   const flippedCards = document.querySelectorAll(".flipped");
+  const matchedCards = document.querySelectorAll(".matched");
 
   //Voltear dos cartas
   if (flippedCards.length === 2) {
@@ -181,10 +192,10 @@ const checkCards = (e) => {
       ) {
         flippedCards.forEach((card) => {
           card.classList.remove("flipped");
+          card.classList.add("matched");
           card.style.pointerEvents = "none";
           counter += 50;
           document.getElementById("score").innerHTML = `Score: ${counter}`;
-          //console.log (counter)
         });
       } else {
         flippedCards.forEach((card) => {
@@ -192,15 +203,13 @@ const checkCards = (e) => {
           card.classList.remove("toggleCard");
         });
       }
-
     }, 1000);
+    if (matchedCards.length === 6) {
+      modal.showModal();
+    }
   }
-
-  //Timer
-
-
-
-
 };
+
+//Timer
 
 export default App;
