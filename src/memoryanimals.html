@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Match - Animals</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory Match - Animals</title>
-  <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Montserrat:wght@400;600&display=swap"
-    rel="stylesheet">
-</head>
-
-<body class="animalBackground">
-  <div id="root"></div>
+  <body class="animalBackground">
+    <div id="root"></div>
     <header class="header">
       <h1 class="title">Animals</h1>
       <h2 class="timer">00:00</h2>
     </header>
     <section id="animalssection"></section>
     <h4 class="scoreAnimals" id="score">Score:</h4>
-  
-  <script src="main.js" type="module"></script>
-</body>
-
+    <dialog class="modal" id="modal">
+      <h2 class="congratulations">¡Felicidades !</h2>
+      <h2 class="finalScore">Tu puntaje fue: </h2>
+      <button class="modalButton" id="playAgain">Jugar de nuevo</button>
+      <button class="modalButton" id="nextLevel">Siguiente nivel</button>
+    </dialog>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
