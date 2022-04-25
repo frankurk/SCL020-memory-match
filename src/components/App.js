@@ -7,6 +7,7 @@ const animalssection = document.getElementById("animalssection");
 const verbssection = document.getElementById("verbssection");
 const buttonPlay = document.getElementById("play");
 const getUserName = document.getElementById("hi");
+const congrats = document.getElementById("congrats");
 const buttonColors = document.getElementById("buttonColors");
 let counter = 0;
 //let match = 8;
@@ -29,7 +30,7 @@ if (buttonPlay) {
 if (getUserName) {
   window.onload = function () {
     document.getElementById("hi").innerHTML =
-      "¡Hola " + localStorage.getItem("name") + "!";
+      `¡Hola ${localStorage.getItem("name")}!`;
   };
 }
 
@@ -53,6 +54,15 @@ if (buttonVerbs) {
     location.href = "memoryverbs.html";
   };
 }
+
+//Felicitar con el nombre
+if (congrats) {
+  window.onload = function () {
+    document.getElementById("congratulations").innerHTML =
+      `¡Felicidades ${localStorage.getItem("name")}!`;
+  };
+}
+
 
 //Da tiempo entre volteo de cartas
 let isWaiting = false;

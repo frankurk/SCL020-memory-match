@@ -10,7 +10,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body class="memoryVerbs">
     <div id="root"></div>
     <header class="header">
@@ -19,6 +18,12 @@
     </header>
     <section id="verbssection"></section>
     <h4 class="scoreVerbs" id="score">Score:</h4>
+    <dialog class="modal" id="modal">
+      <h2 id="congrats" class="congratulations">¡Felicidades !</h2>
+      <h2 class="finalScore">Tu puntaje fue:</h2>
+      <button class="modalButton" id="playAgain">Jugar de nuevo</button>
+      <button class="modalButton" id="nextLevel">Siguiente nivel</button>
+    </dialog>
     <script src="main.js" type="module"></script>
   </body>
 </html>
