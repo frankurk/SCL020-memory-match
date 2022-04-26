@@ -464,12 +464,19 @@ section {
 
 .modal {
   position: absolute;
-  width: 1202px;
-  height: 733px;
+  width: 1000px;
+  height: 600px;
   background: rgba(255, 255, 255, 0.9);
   border: 6px solid #000000;
   box-sizing: border-box;
   border-radius: 30px;
+  text-align: center;
+  margin: 20px;
+}
+
+.modal::backdrop {
+    background-color: #BCFFF3;
+    opacity: .3;
 }
 
 .congrats {
@@ -478,18 +485,6 @@ section {
   font-weight: 400;
   font-size: 110px;
   line-height: 110px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #04526C;
-}
-
-.finalScore {
-  font-family: 'Atma';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 96px;
-  line-height: 96px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -530,3 +525,4 @@ section {
   transform: translate(0px, 5px);
   border-bottom: 1px solid #256680;
 }
+
