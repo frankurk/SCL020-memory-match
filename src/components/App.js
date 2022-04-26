@@ -175,7 +175,7 @@ const App = () => {
       secs < 10 ?SS = `0${secs}` :SS = `${secs}`
       mins < 10 ?MM = `0${mins}` :SS = `${mins}`
 
-      document.getElementById("timer").innerHTML = `$(MM):$(SS)`;
+      document.getElementById("timer").innerHTML = `${MM}:${SS}`;
     }, 1000)
   }
 };
