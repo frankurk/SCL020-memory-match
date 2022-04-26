@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import colors from "../data/colors/colors.js";
 import animals from "../data/animals/animals.js";
 import verbs from "../data/verbs/verbs.js";
@@ -7,15 +8,14 @@ const animalssection = document.getElementById("animalssection");
 const verbssection = document.getElementById("verbssection");
 const buttonPlay = document.getElementById("play");
 const getUserName = document.getElementById("hi");
-const congrats = document.getElementById("congrats");
 const buttonColors = document.getElementById("buttonColors");
 const buttonAnimals = document.getElementById("buttonAnimals");
 const buttonVerbs = document.getElementById("buttonVerbs");
-const time = document.getElementById("timer");
+//let time = document.getElementById("timer");
 let firstClick = false;
 let counter = 0;
-const congratulations = document.getElementById("congratulations");
-const playAgain = document.getElementById("playAgain");
+const congrats = document.getElementById("congrats");
+//const playAgain = document.getElementById("playAgain");
 const nextLevelAnimals = document.getElementById("nextLevelAnimals");
 const nextLevelVerbs = document.getElementById("nextLevelVerbs");
 const goToStart = document.getElementById("goToStart");
@@ -59,20 +59,12 @@ if (buttonVerbs) {
   };
 }
 
-//Felicitar con el nombre
-if (congrats) {
-  window.onload = function () {
-    document.getElementById("congrats").innerHTML =
-      `¡Felicidades ${localStorage.getItem("name")}!`;
-  };
-}
-
-
 //Da tiempo entre volteo de cartas
 let isWaiting = false;
 
 //Modal
 const modal = document.querySelector("#modal");
+let showModal = document.getElementById("finalScore");
 
 const App = () => {
   //Memory Colors
@@ -98,6 +90,10 @@ const App = () => {
           card.classList.toggle("toggleCard");
           checkCards(e);
         }
+        if (!firstClick) {
+          time()
+        }
+        firstClick = true
       });
     }
   }
@@ -125,6 +121,10 @@ const App = () => {
           card.classList.toggle("toggleCard");
           checkCards(e);
         }
+        if (!firstClick) {
+          time()
+        }
+        firstClick = true
       });
     }
   }
@@ -152,29 +152,31 @@ const App = () => {
           card.classList.toggle("toggleCard");
           checkCards(e);
         }
-      });
-
-      if (!firstClick) {
-        if (time) {
-          let secs = 0;
-          let mins = 0;
-          let SS;
-          let MM;
-          setInterval(() => {
-            secs++;
-            if (secs == 60) {
-              secs = 0;
-              mins++;
-            }
-
-            secs < 10 ? (SS = `0${secs}`) : (SS = `${secs}`);
-            mins < 10 ? (MM = `0${secs}`) : (SS = `${mins}`);
-
-            document.getElementsByClassName("timer").innerHTML = `$(MM):$(SS)`;
-          }, 1000);
+        if (!firstClick) {
+          time()
         }
-      }
+        firstClick = true
+      });
     }
+  }
+
+  function time() {
+    let secs = 0;
+    let mins = 0;
+    let SS 
+    let MM 
+    setInterval(() => {
+      secs++;
+      if (secs == 60) {
+        secs = 0;
+        mins++;
+      }
+
+      secs < 10 ?SS = `0${secs}` :SS = `${secs}`
+      mins < 10 ?MM = `0${mins}` :SS = `${mins}`
+
+      document.getElementById("timer").innerHTML = `$(MM):$(SS)`;
+    }, 1000)
   }
 };
 
@@ -211,14 +213,20 @@ const checkCards = (e) => {
     if (matchedCards.length === 6) {
       modal.showModal();
     }
+    if (showModal) {
+      window.onload = function () {
+        document.getElementById("finalScore").innerHTML = `Tu puntaje fue: ${counter}`;
+      }
+    }
   }
 };
 
 //Timer
-if (congratulations) {
+//Felicitar con el nombre
+if (congrats) {
   window.onload = function () {
-    document.getElementById("congratulations").innerHTML =
-      "¡Felicidades " + localStorage.getItem("name") + "!";
+    document.getElementById("congrats").innerHTML =
+      `¡Felicidades ${localStorage.getItem("name")}!`;
   };
 }
 
