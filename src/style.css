@@ -1,3 +1,38 @@
+@font-face {
+  font-family: "Cabin Sketch";
+  src: url("assets/fonts/CabinSketch-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Atma";
+  src: url("assets/fonts/Atma-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Atma";
+  src: url("assets/fonts/Atma-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -29,7 +64,7 @@ h1 {
   text-align: center;
   align-items: center;
   align-content: center;
-  color: #04526C;
+  color: #04526c;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -48,12 +83,12 @@ h1 {
 #name {
   display: flex;
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid #04526C;
+  border: 1px solid #04526c;
   box-sizing: border-box;
   border-radius: 15px;
   width: 60vw;
   height: 20vh;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   text-align: center;
   font-weight: 500px;
@@ -67,11 +102,16 @@ h1 {
   row-gap: 5px;
   width: 30vw;
   height: 12vh;
-  background: linear-gradient(135.37deg, rgba(0, 0, 0, 0.35) 42.86%, rgba(255, 255, 255, 0.35) 134.17%), #3996BC;
+  background: linear-gradient(
+      135.37deg,
+      rgba(0, 0, 0, 0.35) 42.86%,
+      rgba(255, 255, 255, 0.35) 134.17%
+    ),
+    #3996bc;
   background-blend-mode: soft-light, normal;
-  box-shadow: -5px -5px 10px #FAFBFF, 5px 5px 10px #A6ABBD;
+  box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
   border-radius: 20px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   text-align: center;
   align-items: center;
@@ -87,7 +127,7 @@ h1 {
   outline: none;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
-  transition: all .3s;
+  transition: all 0.3s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -98,15 +138,14 @@ h1 {
   background-color: #0a5c7c;
   opacity: 1;
   transform: translateY(0);
-  transition-duration: .35s;
+  transition-duration: 0.35s;
   box-shadow: rgba(18, 60, 187, 0.419) 0 6px 12px;
 }
 
 #play:active {
   transform: translateY(2px);
-  transition-duration: .35s;
+  transition-duration: 0.35s;
 }
-
 
 /* CSS Start */
 .start {
@@ -124,7 +163,7 @@ h2 {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #04526C;
+  color: #04526c;
   justify-content: center;
   margin-top: 3%;
 }
@@ -139,7 +178,7 @@ h3 {
   align-items: center;
   text-align: center;
   justify-content: center;
-  color: #04526C;
+  color: #04526c;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: -65px;
 }
@@ -162,7 +201,7 @@ h3 {
   width: 300px;
   height: 300px;
   background: rgba(255, 255, 255, 0.8);
-  border: 5px solid #04526C;
+  border: 5px solid #04526c;
   box-sizing: border-box;
   border-radius: 50px;
   font-family: Atma;
@@ -170,7 +209,7 @@ h3 {
   font-weight: 400;
   font-size: 80px;
   line-height: 155px;
-  color: #04526C;
+  color: #04526c;
   cursor: pointer;
 }
 
@@ -194,21 +233,21 @@ h3 {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 #buttonAnimals {
   width: 300px;
   height: 300px;
   background: rgba(255, 255, 255, 0.8);
-  border: 5px solid #04526C;
+  border: 5px solid #04526c;
   box-sizing: border-box;
   border-radius: 50px;
   font-family: Atma;
   font-weight: 400;
   font-size: 80px;
   line-height: 155px;
-  color: #04526C;
+  color: #04526c;
   cursor: pointer;
 }
 
@@ -232,14 +271,14 @@ h3 {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 #buttonVerbs {
   width: 300px;
   height: 300px;
   background: rgba(255, 255, 255, 0.8);
-  border: 5px solid #04526C;
+  border: 5px solid #04526c;
   box-sizing: border-box;
   border-radius: 50px;
   font-family: Atma;
@@ -247,7 +286,7 @@ h3 {
   font-weight: 400;
   font-size: 80px;
   line-height: 155px;
-  color: #04526C;
+  color: #04526c;
   cursor: pointer;
 }
 
@@ -271,7 +310,7 @@ h3 {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 /* CSS General */
@@ -283,7 +322,7 @@ h3 {
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: #FFFF;
+  background-color: #ffff;
   opacity: 0.6;
   border-radius: 25px;
   height: 120px;
@@ -363,7 +402,12 @@ section {
   position: relative;
   height: 100%;
   width: 100%;
-  background: conic-gradient(from 180deg at 50% 50%, #FFF2C6 0deg, #D8A9FF 360deg), #FFFFFF;
+  background: conic-gradient(
+      from 180deg at 50% 50%,
+      #fff2c6 0deg,
+      #d8a9ff 360deg
+    ),
+    #ffffff;
   border: 5px solid #000000;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -384,8 +428,8 @@ section {
   line-height: 72px;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
-  background: #E1D7FF;
+  color: #ffffff;
+  background: #e1d7ff;
   border-radius: 15px;
   flex-direction: flex-end;
 }
@@ -401,7 +445,12 @@ section {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: conic-gradient(from 180deg at 50% 50%, #EDFF7B 0deg, #ED6961 360deg), #FFFFFF;
+  background: conic-gradient(
+      from 180deg at 50% 50%,
+      #edff7b 0deg,
+      #ed6961 360deg
+    ),
+    #ffffff;
   border: 5px solid #000000;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -422,8 +471,8 @@ section {
   line-height: 72px;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
-  background: #FFCDBD;
+  color: #ffffff;
+  background: #ffcdbd;
   border-radius: 15px;
   flex-direction: flex-end;
 }
@@ -442,7 +491,12 @@ section {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: conic-gradient(from 180deg at 50% 50%, #BCFFF3 0deg, #3ACBEA 360deg), #FFFFFF;
+  background: conic-gradient(
+      from 180deg at 50% 50%,
+      #bcfff3 0deg,
+      #3acbea 360deg
+    ),
+    #ffffff;
   border: 5px solid #000000;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -463,8 +517,8 @@ section {
   line-height: 72px;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
-  background: #2DB0CC;
+  color: #ffffff;
+  background: #2db0cc;
   border-radius: 15px;
   flex-direction: flex-end;
 }
@@ -483,12 +537,12 @@ section {
 }
 
 .modal::backdrop {
-    background-color: #ffffff;
-    opacity: .3;
+  background-color: #ffffff;
+  opacity: 0.3;
 }
 
 .congrats {
-  font-family: 'Atma';
+  font-family: "Atma";
   font-style: normal;
   font-weight: 400;
   font-size: 110px;
@@ -496,7 +550,7 @@ section {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #04526C;
+  color: #04526c;
   margin-top: 80px;
 }
 
@@ -513,17 +567,22 @@ section {
 }
 
 .modalButton {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 58px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 10px 40px;
   margin: 0px 10px 10px 0px;
-  background: linear-gradient(135.37deg, rgba(0, 0, 0, 0.35) 42.86%, rgba(255, 255, 255, 0.35) 134.17%), #3996BC;
+  background: linear-gradient(
+      135.37deg,
+      rgba(0, 0, 0, 0.35) 42.86%,
+      rgba(255, 255, 255, 0.35) 134.17%
+    ),
+    #3996bc;
   background-blend-mode: soft-light, normal;
-  box-shadow: -5px -5px 10px #FAFBFF, 5px 5px 10px #A6ABBD;
+  box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
   border-radius: 20px;
 }
 
@@ -534,4 +593,3 @@ section {
   transform: translate(0px, 5px);
   border-bottom: 1px solid #256680;
 }
-
