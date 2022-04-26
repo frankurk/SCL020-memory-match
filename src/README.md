@@ -13,6 +13,7 @@
 # Toda tu investigación previa debe tener como resultado todas las Historias de Usuario de tu proyecto.
 
 # No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza solamente por los que se necesiten para tu Sprint 1 (semana 1 de trabajo). Más pistas en la guía de organización para el proyecto.
+<img src= src/img/Prototype.jpg/>
 https://www.figma.com/proto/kGE3phHPuPqzVAdkOte7ug/Memory-Match?node-id=0%3A1&scaling=contain&page-id=0%3A1&starting-point-node-id=6%3A2
 
 # Historias de usuario

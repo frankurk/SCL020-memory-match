@@ -11,11 +11,11 @@ const getUserName = document.getElementById("hi");
 const buttonColors = document.getElementById("buttonColors");
 const buttonAnimals = document.getElementById("buttonAnimals");
 const buttonVerbs = document.getElementById("buttonVerbs");
-//let time = document.getElementById("timer");
+let time = document.getElementById("timer");
 let firstClick = false;
 let counter = 0;
 const congrats = document.getElementById("congrats");
-//const playAgain = document.getElementById("playAgain");
+const playAgain = document.getElementById("playAgain");
 const nextLevelAnimals = document.getElementById("nextLevelAnimals");
 const nextLevelVerbs = document.getElementById("nextLevelVerbs");
 const goToStart = document.getElementById("goToStart");
@@ -230,9 +230,11 @@ if (congrats) {
   };
 }
 
-/* if (playAgain) {
-  document.getElementById("playAgain").onclick = window.location.reload();
-}  */
+ if (playAgain) {
+  document.getElementById("playAgain").addEventListener("click", ()=> {
+    window.location.reload()
+  }) 
+} 
 
 if (nextLevelAnimals) {
   document.getElementById("nextLevelAnimals").onclick = function () {

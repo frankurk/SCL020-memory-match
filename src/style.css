@@ -22,7 +22,7 @@ h1 {
   flex-direction: column;
   flex-wrap: nowrap;
   font-family: Cabin Sketch;
-  font-size: 170px;
+  font-size: 11vw;
   font-weight: 599;
   letter-spacing: 0;
   line-height: 150px;
@@ -51,13 +51,13 @@ h1 {
   border: 1px solid #04526C;
   box-sizing: border-box;
   border-radius: 15px;
-  width: 900px;
-  height: 158px;
+  width: 60vw;
+  height: 20vh;
   font-family: 'Montserrat';
   font-style: normal;
   text-align: center;
-  font-weight: 500;
-  font-size: 64px;
+  font-weight: 500px;
+  font-size: 5vw;
   line-height: 78px;
 }
 
@@ -65,8 +65,8 @@ h1 {
   display: flex;
   color: #fff;
   row-gap: 5px;
-  width: 381px;
-  height: 100px;
+  width: 30vw;
+  height: 12vh;
   background: linear-gradient(135.37deg, rgba(0, 0, 0, 0.35) 42.86%, rgba(255, 255, 255, 0.35) 134.17%), #3996BC;
   background-blend-mode: soft-light, normal;
   box-shadow: -5px -5px 10px #FAFBFF, 5px 5px 10px #A6ABBD;
@@ -78,7 +78,7 @@ h1 {
   align-content: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 3vw;
   line-height: 77px;
   appearance: none;
   backface-visibility: hidden;
@@ -120,7 +120,7 @@ h2 {
   font-family: Atma;
   font-style: normal;
   font-weight: 400;
-  font-size: 128px;
+  font-size: 10vw;
   display: flex;
   align-items: center;
   text-align: center;
@@ -463,19 +463,20 @@ section {
 }
 
 .modal {
-  position: absolute;
   width: 1000px;
-  height: 600px;
+  height: 500px;
   background: rgba(255, 255, 255, 0.9);
   border: 6px solid #000000;
   box-sizing: border-box;
   border-radius: 30px;
   text-align: center;
-  margin: 20px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .modal::backdrop {
-    background-color: #BCFFF3;
+    background-color: #ffffff;
     opacity: .3;
 }
 
@@ -489,6 +490,7 @@ section {
   align-items: center;
   text-align: center;
   color: #04526C;
+  margin-top: 80px;
 }
 
 .modalButtons {
