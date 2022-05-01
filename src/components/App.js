@@ -2,6 +2,7 @@
 import colors from "../data/colors/colors.js";
 import animals from "../data/animals/animals.js";
 import verbs from "../data/verbs/verbs.js";
+import shuffle from "./shuffle.js";
 
 const colorssection = document.getElementById("colorssection");
 const animalssection = document.getElementById("animalssection");
@@ -69,7 +70,7 @@ let showModal = document.getElementById("finalScore");
 const App = () => {
   //Memory Colors
   if (colorssection) {
-    const randomizedItems = colors.items.sort(() => Math.random() - 0.5);
+    const randomizedItems = shuffle(colors.items);
     for (const item of randomizedItems) {
       const card = document.createElement("div");
       const face = document.createElement("img");
@@ -100,7 +101,7 @@ const App = () => {
 
   //Memory Animals
   if (animalssection) {
-    const randomizedItems = animals.items.sort(() => Math.random() - 0.5);
+    const randomizedItems = shuffle(animals.items);
     for (const item of randomizedItems) {
       const card = document.createElement("div");
       const face = document.createElement("img");
@@ -131,7 +132,7 @@ const App = () => {
 
   // Memory Verbos
   if (verbssection) {
-    const randomizedItems = verbs.items.sort(() => Math.random() - 0.5);
+    const randomizedItems = shuffle(verbs.items);
     for (const item of randomizedItems) {
       const card = document.createElement("div");
       const face = document.createElement("img");
