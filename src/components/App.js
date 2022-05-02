@@ -12,15 +12,12 @@ const getUserName = document.getElementById("hi");
 const buttonColors = document.getElementById("buttonColors");
 const buttonAnimals = document.getElementById("buttonAnimals");
 const buttonVerbs = document.getElementById("buttonVerbs");
-let time = document.getElementById("timer");
 let firstClick = false;
-let counter = 0;
 const congrats = document.getElementById("congrats");
 const playAgain = document.getElementById("playAgain");
 const nextLevelAnimals = document.getElementById("nextLevelAnimals");
 const nextLevelVerbs = document.getElementById("nextLevelVerbs");
 const goToStart = document.getElementById("goToStart");
-
 
 //Botón jugar obtiene valor para próxima página y dirige a la siguiente página
 if (buttonPlay) {
@@ -34,8 +31,9 @@ if (buttonPlay) {
 // Muestra el valor de la página anterior
 if (getUserName) {
   window.onload = function () {
-    document.getElementById("hi").innerHTML =
-      `¡Hola ${localStorage.getItem("name")}!`;
+    document.getElementById("hi").innerHTML = `¡Hola ${localStorage.getItem(
+      "name"
+    )}!`;
   };
 }
 
@@ -65,7 +63,6 @@ let isWaiting = false;
 
 //Modal
 const modal = document.querySelector("#modal");
-let showModal = document.getElementById("finalScore");
 
 const App = () => {
   //Memory Colors
@@ -86,15 +83,16 @@ const App = () => {
       card.appendChild(face);
       card.appendChild(back);
 
-      card.addEventListener("click", (e) => {
+      card.addEventListener("click", () => {
         if (!isWaiting) {
           card.classList.toggle("toggleCard");
-          checkCards(e);
+          card.classList.add("flipped");
+          checkCards();
         }
         if (!firstClick) {
-          time()
+          time();
         }
-        firstClick = true
+        firstClick = true;
       });
     }
   }
@@ -117,15 +115,16 @@ const App = () => {
       card.appendChild(face);
       card.appendChild(back);
 
-      card.addEventListener("click", (e) => {
+      card.addEventListener("click", () => {
         if (!isWaiting) {
           card.classList.toggle("toggleCard");
-          checkCards(e);
+          card.classList.add("flipped");
+          checkCards();
         }
         if (!firstClick) {
-          time()
+          time();
         }
-        firstClick = true
+        firstClick = true;
       });
     }
   }
@@ -148,43 +147,23 @@ const App = () => {
       card.appendChild(face);
       card.appendChild(back);
 
-      card.addEventListener("click", (e) => {
+      card.addEventListener("click", () => {
         if (!isWaiting) {
           card.classList.toggle("toggleCard");
-          checkCards(e);
+          card.classList.add("flipped");
+          checkCards();
         }
         if (!firstClick) {
-          time()
+          time();
         }
-        firstClick = true
+        firstClick = true;
       });
     }
-  }
-
-  function time() {
-    let secs = 0;
-    let mins = 0;
-    let SS 
-    let MM 
-    setInterval(() => {
-      secs++;
-      if (secs == 60) {
-        secs = 0;
-        mins++;
-      }
-
-      secs < 10 ?SS = `0${secs}` :SS = `${secs}`
-      mins < 10 ?MM = `0${mins}` :SS = `${mins}`
-
-      document.getElementById("timer").innerHTML = `${MM}:${SS}`;
-    }, 1000)
   }
 };
 
 //Voltear cartas
-const checkCards = (e) => {
-  const clickedCard = e.target;
-  clickedCard.classList.add("flipped");
+const checkCards = () => {
   const flippedCards = document.querySelectorAll(".flipped");
   const matchedCards = document.querySelectorAll(".matched");
 
@@ -201,8 +180,6 @@ const checkCards = (e) => {
           card.classList.remove("flipped");
           card.classList.add("matched");
           card.style.pointerEvents = "none";
-          counter += 50;
-          document.getElementById("score").innerHTML = `Score: ${counter}`;
         });
       } else {
         flippedCards.forEach((card) => {
@@ -213,46 +190,65 @@ const checkCards = (e) => {
     }, 1000);
     if (matchedCards.length === 6) {
       modal.showModal();
-    }
-    if (showModal) {
-      window.onload = function () {
-        document.getElementById("finalScore").innerHTML = `Tu puntaje fue: ${counter}`;
-      }
+      if (timer) clearInterval(timer);
+      congratulations();
     }
   }
 };
 
-//Timer
-//Felicitar con el nombre
-if (congrats) {
-  window.onload = function () {
-    document.getElementById("congrats").innerHTML =
-      `¡Felicidades ${localStorage.getItem("name")}!`;
-  };
+//* Mensaje al ganar
+const congratulations = () => {
+  document.getElementById("congrats").innerHTML = `¡Felicidades ${localStorage.getItem("name")}!`;
+  document.getElementById("finalScore").innerHTML = `Tu puntaje fue ${counter} puntos`;
 }
 
- if (playAgain) {
-  document.getElementById("playAgain").addEventListener("click", ()=> {
-    window.location.reload()
-  }) 
-} 
+//* Timer y puntaje 
+let counter = 100;
+let timer = null;
+const time = () => {
+  let secs = 0;
+  let mins = 0;
+  let SS;
+  let MM;
+  timer = setInterval(() => {
+    secs++;
+    counter--;
+    if (secs == 60) {
+      secs = 0;
+      mins++;
+    }
+
+    secs < 10 ? (SS = `0${secs}`) : (SS = `${secs}`);
+    mins < 10 ? (MM = `0${mins}`) : (SS = `${mins}`);
+
+    document.getElementById("timer").innerHTML = `${MM}:${SS}`;
+    document.getElementById("score").innerHTML = `Score: ${counter}`;
+  }, 1000);
+}
+
+//* Botones del modal
+if (playAgain) {
+  document.getElementById("playAgain").addEventListener("click", () => {
+    window.location.reload();
+  });
+}
 
 if (nextLevelAnimals) {
   document.getElementById("nextLevelAnimals").onclick = function () {
     location.href = "memoryanimals.html";
-  }
+  };
 }
 
 if (nextLevelVerbs) {
   document.getElementById("nextLevelVerbs").onclick = function () {
     location.href = "memoryverbs.html";
-  }
+  };
 }
 
 if (goToStart) {
   document.getElementById("goToStart").onclick = function () {
     location.href = "start.html";
-  }
+  };
 }
 
 export default App;

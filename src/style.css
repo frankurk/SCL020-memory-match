@@ -554,6 +554,16 @@ section {
   margin-top: 80px;
 }
 
+#finalScore {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color:#04526c
+}
+
 .modalButtons {
   display: flex;
   position: relative;
