@@ -1,14 +1,4 @@
-@media (max-width: 12450px) {}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
-  body {
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      align-content: space-between;
-    }
-  }
-
-  @font-face {
+@font-face {
     font-family: "Cabin Sketch";
     src: url("assets/fonts/CabinSketch-Regular.ttf") format("truetype");
     font-style: normal;
@@ -50,7 +40,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    overflow: hidden;
   }
 
   /* CSS index */
@@ -327,11 +316,9 @@
   .header {
     display: flex;
     width: 100%;
-    flex-direction: row;
-    align-content: center;
-    text-align: center;
-    align-items: center;
     justify-content: center;
+    text-align: center;
+    align-items:center;
     background-color: #ffff;
     opacity: 0.6;
     border-radius: 25px;
@@ -339,23 +326,22 @@
   }
 
   .title {
-    /*flex-basis: 80%;*/
+    display: flex;
+    position: relative;
     color: #04526c;
     font-family: Cabin Sketch;
     font-size: 7rem;
     font-weight: 300;
-    flex-wrap: nowrap;
   }
 
   #timer {
-    /*flex-basis: 20%;*/
-    position: absolute;
-    right: 10%;
-    color: #04526c;
+    display: flex;
+    position: relative;
+    color: #ffffff;
     font-family: Montserrat;
     font-weight: 600;
     font-size: 4rem;
-    position: right;
+    margin: 0px;
   }
 
   /* CSS Cards  */
@@ -363,14 +349,25 @@
   section {
     display: grid;
     position: relative;
-    flex-wrap: wrap;
     grid-auto-flow: dense;
     grid-template-columns: repeat(4, 7rem);
     grid-template-rows: repeat(2, 7rem);
     grid-gap: 8rem;
     perspective: 1000px;
-    padding: 2rem;
+    padding: 1rem;
     transform: rotateY(0deg);
+    width: 922px;
+    height: 440px;
+  }
+
+  @media (max-width: 600px) {
+    section { 
+      width: auto;
+      height:auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 1rem;
+    }
   }
 
   .face {
@@ -405,10 +402,8 @@
   /* CSS Memory Colors */
 
   .memoryColors {
-    position: relative;
     background-image: url("assets/img/Colors.jpg");
     background-size: cover;
-    flex-wrap: wrap;
   }
 
   .backColors {
@@ -472,16 +467,16 @@
     position: relative;
     display: flex;
     width: 381px;
-    height: 77px;
+    height: 70px;
+    margin-top: 0;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
     font-size: 4rem;
-    line-height: 1.1;
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    background: #ec7513;
+    background: rgba(236, 117, 19, 0.8);
     border-radius: 15px;
     flex-direction: flex-end;
   }
@@ -489,11 +484,8 @@
   /* CSS Memory Verbs */
 
   .memoryVerbs {
-    position: relative;
     background-image: url("assets/img/Verbs.jpg");
     background-size: cover;
-    flex-wrap: wrap;
-    width: auto;
   }
 
   .backVerbs {
