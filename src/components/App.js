@@ -13,7 +13,6 @@ const buttonColors = document.getElementById("buttonColors");
 const buttonAnimals = document.getElementById("buttonAnimals");
 const buttonVerbs = document.getElementById("buttonVerbs");
 let firstClick = false;
-const congrats = document.getElementById("congrats");
 const playAgain = document.getElementById("playAgain");
 const nextLevelAnimals = document.getElementById("nextLevelAnimals");
 const nextLevelVerbs = document.getElementById("nextLevelVerbs");

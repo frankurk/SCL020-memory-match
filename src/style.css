@@ -362,8 +362,9 @@
 
   @media (max-width: 600px) {
     section { 
+      perspective: 1000px;
       width: auto;
-      height:auto;
+      height: auto;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(4, 1fr);
       grid-gap: 1rem;
@@ -426,7 +427,8 @@
     position: relative;
     display: flex;
     width: 381px;
-    height: 77px;
+    height: 70px;
+    margin-top: 0;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
@@ -435,7 +437,7 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    background: #8e049a;
+    background: rgba(142, 4, 154,0.8);
     border-radius: 15px;
     flex-direction: flex-end;
   }
@@ -508,7 +510,8 @@
     position: relative;
     display: flex;
     width: 381px;
-    height: 77px;
+    height: 70px;
+    margin-top: 0;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
@@ -517,7 +520,7 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    background: #2db0cc;
+    background: rgba(45, 176, 204, 0.8);
     border-radius: 15px;
     flex-direction: flex-end;
   }
