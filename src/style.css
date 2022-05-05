@@ -1,570 +1,1186 @@
-<<<<<<< Updated upstream
 @font-face {
-    font-family: "Cabin Sketch";
-    src: url("assets/fonts/CabinSketch-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-  }
+  font-family: "Cabin Sketch";
+  src: url("assets/fonts/CabinSketch-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
 
-  @font-face {
-    font-family: "Atma";
-    src: url("assets/fonts/Atma-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-  }
+@font-face {
+  font-family: "Atma";
+  src: url("assets/fonts/Atma-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
 
-  @font-face {
-    font-family: "Atma";
-    src: url("assets/fonts/Atma-Light.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 300;
-  }
+@font-face {
+  font-family: "Atma";
+  src: url("assets/fonts/Atma-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
 
-  @font-face {
-    font-family: "Montserrat";
-    src: url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-  }
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
 
-  @font-face {
-    font-family: "Montserrat";
-    src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 800;
-  }
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 
-  /* CSS index */
-  .index {
-    position: relative;
+/* CSS index */
+.index {
+  position: relative;
+  width: auto;
+  background-image: url("assets/img/Background.jpg");
+  background-size: cover;
+  flex-wrap: nowrap;
+  display: flex;
+}
+
+h1 {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: Cabin Sketch;
+  font-weight: 300;
+  font-size: 11vw;
+
+  letter-spacing: 0;
+  line-height: 1.1;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  color: #04526c;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.playButton {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+#name {
+  display: flex;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 15px;
+  width: 60vw;
+  height: 20vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 5vw;
+  line-height: 1.1;
+}
+
+#play {
+  display: flex;
+  color: #fff;
+  row-gap: 1rem;
+  width: 30vw;
+  height: 12vh;
+  background: linear-gradient(135.37deg,
+      rgba(0, 0, 0, 0.35) 42.86%,
+      rgba(255, 255, 255, 0.35) 134.17%),
+    #3996bc;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
+  border-radius: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 3vw;
+  line-height: 1.1;
+  appearance: none;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+#play:hover {
+  background-color: #0a5c7c;
+  opacity: 90%;
+  transform: translateY(0);
+  transition-duration: 0.35s;
+  box-shadow: rgba(18, 60, 187, 0.419) 0 6px 12px;
+}
+
+#play:active {
+  transform: translateY(2px);
+  transition-duration: 0.35s;
+}
+
+/* CSS Start */
+.start {
+  position: relative;
+  background-image: url("assets/img/Background.jpg");
+  background-size: cover;
+  flex-wrap: nowrap;
+}
+
+h2 {
+  font-family: Atma;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5vw;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #04526c;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: -65px;
+}
+
+.level {
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: -25px;
+}
+
+#buttonColors {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: Atma;
+  font-style: light;
+  font-weight: 400;
+  font-size: 5vw;
+  line-height: 1.1;
+  color: #04526c;
+  cursor: pointer;
+}
+
+#buttonColors:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#buttonColors:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#buttonColors::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+#buttonAnimals {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: Atma;
+  font-style: light;
+  font-weight: 400;
+  font-size: 5vw;
+  line-height: 1.1;
+  color: #04526c;
+  cursor: pointer;
+}
+
+#buttonAnimals:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#buttonAnimals:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#buttonAnimals::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+#buttonVerbs {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: Atma;
+  font-style: light;
+  font-weight: 400;
+  font-size: 5vw;
+  line-height: 1.1;
+  color: #04526c;
+  cursor: pointer;
+}
+
+#buttonVerbs:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#buttonVerbs:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#buttonVerbs::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+/* CSS General */
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items:center;
+  background-color: #ffff;
+  opacity: 0.6;
+  border-radius: 25px;
+  height: 120px;
+}
+
+.title {
+  display: flex;
+  position: relative;
+  color: #04526c;
+  font-family: Cabin Sketch;
+  font-size: 7rem;
+  font-weight: 300;
+}
+
+#timer {
+  display: flex;
+  position: relative;
+  color: #ffffff;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 4rem;
+  margin: 0px;
+}
+
+/* CSS Cards  */
+
+section {
+  display: grid;
+  position: relative;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(4, 7rem);
+  grid-template-rows: repeat(2, 7rem);
+  grid-gap: 8rem;
+  perspective: 1000px;
+  padding: 1rem;
+  transform: rotateY(0deg);
+  width: 922px;
+  height: 440px;
+}
+
+@media (max-width: 600px) {
+  section { 
     width: auto;
-    background-image: url("assets/img/Background.jpg");
-    background-size: cover;
-    flex-wrap: nowrap;
-    display: flex;
+    height:auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 1rem;
   }
+}
 
-  h1 {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    font-family: Cabin Sketch;
-    font-weight: 300;
-    font-size: 11vw;
+.face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: aliceblue;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  transform: scaleX(-1);
+  pointer-events: none;
+}
 
-    letter-spacing: 0;
-    line-height: 1.1;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    color: #04526c;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
+.card {
+  height: 12.5rem;
+  width: 12.5rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: rotateY(0deg);
+  transform: rotateX(0deg);
+  cursor: pointer;
+}
 
-  .playButton {
-    display: flex;
-    flex-flow: column wrap;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    gap: 2rem;
-  }
+.toggleCard {
+  transform: rotateY(180deg);
+  position: relative;
+}
 
-  #name {
-    display: flex;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #04526c;
-    box-sizing: border-box;
-    border-radius: 15px;
-    width: 60vw;
-    height: 20vh;
-    font-family: "Montserrat";
-    font-style: normal;
-    text-align: center;
-    font-weight: 500;
-    font-size: 5vw;
-    line-height: 1.1;
-  }
+/* CSS Memory Colors */
 
-  #play {
-    display: flex;
-    color: #fff;
-    row-gap: 1rem;
-    width: 30vw;
-    height: 12vh;
-    background: linear-gradient(135.37deg,
-        rgba(0, 0, 0, 0.35) 42.86%,
-        rgba(255, 255, 255, 0.35) 134.17%),
-      #3996bc;
-    background-blend-mode: soft-light, normal;
-    box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
-    border-radius: 20px;
-    font-family: "Montserrat";
-    font-style: normal;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 3vw;
-    line-height: 1.1;
-    appearance: none;
-    backface-visibility: hidden;
-    box-sizing: border-box;
-    cursor: pointer;
-    outline: none;
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
-    transition: all 0.3s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-  }
+.memoryColors {
+  background-image: url("assets/img/Colors.jpg");
+  background-size: cover;
+}
 
-  #play:hover {
-    background-color: #0a5c7c;
-    opacity: 90%;
-    transform: translateY(0);
-    transition-duration: 0.35s;
-    box-shadow: rgba(18, 60, 187, 0.419) 0 6px 12px;
-  }
+.backColors {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #fff2c6 0deg,
+      #d8a9ff 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
 
-  #play:active {
-    transform: translateY(2px);
-    transition-duration: 0.35s;
-  }
+.scoreColors {
+  position: relative;
+  display: flex;
+  width: 381px;
+  height: 77px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.1;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #8e049a;
+  border-radius: 15px;
+  flex-direction: flex-end;
+}
 
-  /* CSS Start */
-  .start {
-    position: relative;
-    background-image: url("assets/img/Background.jpg");
-    background-size: cover;
-    flex-wrap: nowrap;
-  }
+/* CSS Memory Animals */
 
-  h2 {
-    font-family: Atma;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10vw;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #04526c;
-    justify-content: center;
-    margin-top: 3%;
-  }
+.animalBackground {
+  background-image: url("assets/img/animals.jpg");
+  background-size: cover;
+}
 
-  h3 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 5vw;
-    line-height: 1.1;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: #04526c;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -65px;
-  }
+.backAnimals {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #edff7b 0deg,
+      #ed6961 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
 
-  .level {
-    display: flex;
-    position: relative;
-    flex-flow: row wrap;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    gap: 2rem;
-    margin-top: -25px;
-  }
+.scoreAnimals {
+  position: relative;
+  display: flex;
+  width: 381px;
+  height: 70px;
+  margin-top: 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(236, 117, 19, 0.8);
+  border-radius: 15px;
+  flex-direction: flex-end;
+}
 
-  #buttonColors {
-    width: 20rem;
-    height: 20rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 5px solid #04526c;
-    box-sizing: border-box;
-    border-radius: 50px;
-    font-family: Atma;
-    font-style: light;
-    font-weight: 400;
-    font-size: 5vw;
-    line-height: 1.1;
-    color: #04526c;
-    cursor: pointer;
-  }
+/* CSS Memory Verbs */
 
-  #buttonColors:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
+.memoryVerbs {
+  background-image: url("assets/img/Verbs.jpg");
+  background-size: cover;
+}
 
-  #buttonColors:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
+.backVerbs {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #bcfff3 0deg,
+      #3acbea 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
 
-  #buttonColors::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-  }
+.scoreVerbs {
+  position: relative;
+  display: flex;
+  width: 381px;
+  height: 77px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.1;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #2db0cc;
+  border-radius: 15px;
+  flex-direction: flex-end;
+}
 
-  #buttonAnimals {
-    width: 20rem;
-    height: 20rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 5px solid #04526c;
-    box-sizing: border-box;
-    border-radius: 50px;
-    font-family: Atma;
-    font-style: light;
-    font-weight: 400;
-    font-size: 5vw;
-    line-height: 1.1;
-    color: #04526c;
-    cursor: pointer;
-  }
+.modal {
+  width: 1000px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 6px solid #000000;
+  box-sizing: border-box;
+  border-radius: 30px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
 
-  #buttonAnimals:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
+.modal::backdrop {
+  background-color: #ffffff;
+  opacity: 0.3;
+}
 
-  #buttonAnimals:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
+.congrats {
+  font-family: "Atma";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 7vw;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c;
+  margin-top: 60px;
+}
 
-  #buttonAnimals::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-  }
-
-  #buttonVerbs {
-    width: 20rem;
-    height: 20rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 5px solid #04526c;
-    box-sizing: border-box;
-    border-radius: 50px;
-    font-family: Atma;
-    font-style: light;
-    font-weight: 400;
-    font-size: 5vw;
-    line-height: 1.1;
-    color: #04526c;
-    cursor: pointer;
-  }
-
-  #buttonVerbs:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  #buttonVerbs:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  #buttonVerbs::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-  }
-
-  /* CSS General */
-  .header {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    align-items:center;
-    background-color: #ffff;
-    opacity: 0.6;
-    border-radius: 25px;
-    height: 120px;
-  }
-
-  .title {
-    display: flex;
-    position: relative;
-    color: #04526c;
-    font-family: Cabin Sketch;
-    font-size: 7rem;
-    font-weight: 300;
-  }
-
-  #timer {
-    display: flex;
-    position: relative;
-    color: #ffffff;
-    font-family: Montserrat;
-    font-weight: 600;
-    font-size: 4rem;
-    margin: 0px;
-  }
-
-  /* CSS Cards  */
-
-  section {
-    display: grid;
-    position: relative;
-    grid-auto-flow: dense;
-    grid-template-columns: repeat(4, 7rem);
-    grid-template-rows: repeat(2, 7rem);
-    grid-gap: 8rem;
-    perspective: 1000px;
-    padding: 1rem;
-    transform: rotateY(0deg);
-    width: 922px;
-    height: 440px;
-  }
-
-  @media (max-width: 600px) {
-    section { 
-      width: auto;
-      height:auto;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      grid-gap: 1rem;
-    }
-  }
-
-  .face {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: aliceblue;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    transform: scaleX(-1);
-    pointer-events: none;
-  }
-
-  .card {
-    height: 12.5rem;
-    width: 12.5rem;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: rotateY(0deg);
-    transform: rotateX(0deg);
-    cursor: pointer;
-  }
-
-  .toggleCard {
-    transform: rotateY(180deg);
-    position: relative;
-  }
-
-  /* CSS Memory Colors */
-
-  .memoryColors {
-    background-image: url("assets/img/Colors.jpg");
-    background-size: cover;
-  }
-
-  .backColors {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background: conic-gradient(from 180deg at 50% 50%,
-        #fff2c6 0deg,
-        #d8a9ff 360deg),
-      #ffffff;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    backface-visibility: hidden;
-    pointer-events: none;
-  }
-
-  .scoreColors {
-    position: relative;
-    display: flex;
-    width: 381px;
-    height: 77px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 1.1;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    background: #8e049a;
-    border-radius: 15px;
-    flex-direction: flex-end;
-  }
-
-  /* CSS Memory Animals */
-
-  .animalBackground {
-    background-image: url("assets/img/animals.jpg");
-    background-size: cover;
-  }
-
-  .backAnimals {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: conic-gradient(from 180deg at 50% 50%,
-        #edff7b 0deg,
-        #ed6961 360deg),
-      #ffffff;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    backface-visibility: hidden;
-    pointer-events: none;
-  }
-
-  .scoreAnimals {
-    position: relative;
-    display: flex;
-    width: 381px;
-    height: 70px;
-    margin-top: 0;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4rem;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    background: rgba(236, 117, 19, 0.8);
-    border-radius: 15px;
-    flex-direction: flex-end;
-  }
-
-  /* CSS Memory Verbs */
-
-  .memoryVerbs {
-    background-image: url("assets/img/Verbs.jpg");
-    background-size: cover;
-  }
-
-  .backVerbs {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: conic-gradient(from 180deg at 50% 50%,
-        #bcfff3 0deg,
-        #3acbea 360deg),
-      #ffffff;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    backface-visibility: hidden;
-    pointer-events: none;
-  }
-
-  .scoreVerbs {
-    position: relative;
-    display: flex;
-    width: 381px;
-    height: 77px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 1.1;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    background: #2db0cc;
-    border-radius: 15px;
-    flex-direction: flex-end;
-  }
-
-  .modal {
-    width: 1000px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 6px solid #000000;
-    box-sizing: border-box;
-    border-radius: 30px;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .modal::backdrop {
-    background-color: #ffffff;
-    opacity: 0.3;
-  }
-
-  .congrats {
-    font-family: "Atma";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 7vw;
-    line-height: 1.1;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #04526c;
-    margin-top: 60px;
-  }
-
-  #finalScore {
-    font-family: "Montserrat";
-    font-weight: 800;
-    font-size: 4vw;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #04526c
-  }
+#finalScore {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-size: 4vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c
+}
 
 <<<<<<< HEAD
+.modalButton:hover,
+.modalButton:active {
+-webkit-transform: translate(0px, 5px);
+-ms-transform: translate(0px, 5px);
+transform: translate(0px, 5px);
+border-bottom: 1px solid #256680;
+}
+=======
+@media (max-width: 12450px) {}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+body {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    align-content: space-between;
+  }
+}
+
+@font-face {
+  font-family: "Cabin Sketch";
+  src: url("assets/fonts/CabinSketch-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Atma";
+  src: url("assets/fonts/Atma-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Atma";
+  src: url("assets/fonts/Atma-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* CSS index */
+.index {
+  position: relative;
+  width: auto;
+  background-image: url("assets/img/Background.jpg");
+  background-size: cover;
+  flex-wrap: nowrap;
+  display: flex;
+}
+
+h1 {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: Cabin Sketch;
+  font-weight: 300;
+  font-size: 11vw;
+
+  letter-spacing: 0;
+  line-height: 1.1;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  color: #04526c;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.playButton {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+#name {
+  display: flex;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 15px;
+  width: 60vw;
+  height: 20vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 5vw;
+  line-height: 1.1;
+}
+
+#play {
+  display: flex;
+  color: #fff;
+  row-gap: 1rem;
+  width: 30vw;
+  height: 12vh;
+  background: linear-gradient(135.37deg,
+      rgba(0, 0, 0, 0.35) 42.86%,
+      rgba(255, 255, 255, 0.35) 134.17%),
+    #3996bc;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
+  border-radius: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 3vw;
+  line-height: 1.1;
+  appearance: none;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+#play:hover {
+  background-color: #0a5c7c;
+  opacity: 90%;
+  transform: translateY(0);
+  transition-duration: 0.35s;
+  box-shadow: rgba(18, 60, 187, 0.419) 0 6px 12px;
+}
+
+#play:active {
+  transform: translateY(2px);
+  transition-duration: 0.35s;
+}
+
+/* CSS Start */
+.start {
+  position: relative;
+  background-image: url("assets/img/Background.jpg");
+  background-size: cover;
+  flex-wrap: nowrap;
+}
+
+h2 {
+  font-family: Atma;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5vw;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #04526c;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: -65px;
+}
+
+.level {
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: -25px;
+}
+
+#buttonColors {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: Atma;
+  font-style: light;
+  font-weight: 400;
+  font-size: 5vw;
+  line-height: 1.1;
+  color: #04526c;
+  cursor: pointer;
+}
+
+#buttonColors:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#buttonColors:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#buttonColors::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+#buttonAnimals {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: Atma;
+  font-style: light;
+  font-weight: 400;
+  font-size: 5vw;
+  line-height: 1.1;
+  color: #04526c;
+  cursor: pointer;
+}
+
+#buttonAnimals:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#buttonAnimals:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#buttonAnimals::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+#buttonVerbs {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: Atma;
+  font-style: light;
+  font-weight: 400;
+  font-size: 5vw;
+  line-height: 1.1;
+  color: #04526c;
+  cursor: pointer;
+}
+
+#buttonVerbs:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#buttonVerbs:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#buttonVerbs::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+/* CSS General */
+.header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffff;
+  opacity: 0.6;
+  border-radius: 25px;
+  height: 120px;
+}
+
+.title {
+  /*flex-basis: 80%;*/
+  color: #04526c;
+  font-family: Cabin Sketch;
+  font-size: 7rem;
+  font-weight: 300;
+  flex-wrap: nowrap;
+}
+
+#timer {
+  /*flex-basis: 20%;*/
+  position: absolute;
+  right: 10%;
+  color: #04526c;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 4rem;
+  position: right;
+}
+
+/* CSS Cards  */
+
+section {
+  display: grid;
+  position: relative;
+  flex-wrap: wrap;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(4, 7rem);
+  grid-template-rows: repeat(2, 7rem);
+  grid-gap: 8rem;
+  perspective: 1000px;
+  padding: 2rem;
+  transform: rotateY(0deg);
+}
+
+.face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: aliceblue;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  transform: scaleX(-1);
+  pointer-events: none;
+}
+
+.card {
+  height: 12.5rem;
+  width: 12.5rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: rotateY(0deg);
+  transform: rotateX(0deg);
+  cursor: pointer;
+}
+
+@media (min-width: 320px) {
+  .card { grid-template-columns: repeat(2, 1fr); }
+}
+
+.toggleCard {
+  transform: rotateY(180deg);
+  position: relative;
+}
+
+/* CSS Memory Colors */
+
+.memoryColors {
+  position: relative;
+  background-image: url("assets/img/Colors.jpg");
+  background-size: cover;
+  flex-wrap: wrap;
+}
+
+.backColors {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #fff2c6 0deg,
+      #d8a9ff 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.scoreColors {
+  position: relative;
+  display: flex;
+  width: 381px;
+  height: 77px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.1;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #8e049a;
+  border-radius: 15px;
+  flex-direction: flex-end;
+}
+
+/* CSS Memory Animals */
+
+.animalBackground {
+  background-image: url("assets/img/animals.jpg");
+  background-size: cover;
+}
+
+.backAnimals {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #edff7b 0deg,
+      #ed6961 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.scoreAnimals {
+  position: relative;
+  display: flex;
+  width: 381px;
+  height: 77px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.1;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #ec7513;
+  border-radius: 15px;
+  flex-direction: flex-end;
+}
+
+/* CSS Memory Verbs */
+
+.memoryVerbs {
+  position: relative;
+  background-image: url("assets/img/Verbs.jpg");
+  background-size: cover;
+  flex-wrap: wrap;
+  width: auto;
+}
+
+.backVerbs {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #bcfff3 0deg,
+      #3acbea 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.scoreVerbs {
+  position: relative;
+  display: flex;
+  width: 381px;
+  height: 77px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.1;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #2db0cc;
+  border-radius: 15px;
+  flex-direction: flex-end;
+}
+
+.modal {
+  width: 1000px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 6px solid #000000;
+  box-sizing: border-box;
+  border-radius: 30px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.modal::backdrop {
+  background-color: #ffffff;
+  opacity: 0.3;
+}
+
+.congrats {
+  font-family: "Atma";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 7vw;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c;
+  margin-top: 60px;
+}
+
+#finalScore {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-size: 4vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c
+}
+
+=======
+>>>>>>> c57795294c070eafd1f134510516be98f2dde838
+.modalButtons {
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+
+.modalButton {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vw;
+  line-height: 58px;
+  color: #ffffff;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  background: linear-gradient(135.37deg,
+      rgba(0, 0, 0, 0.35) 42.86%,
+      rgba(255, 255, 255, 0.35) 134.17%),
+    #3996bc;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
+  border-radius: 20px;
+}
+
 .modalButton:hover,
 .modalButton:active {
   -webkit-transform: translate(0px, 5px);
@@ -572,624 +1188,3 @@
   transform: translate(0px, 5px);
   border-bottom: 1px solid #256680;
 }
-=======
-@media (max-width: 12450px) {}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
-  body {
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      align-content: space-between;
-    }
-  }
-
-  @font-face {
-    font-family: "Cabin Sketch";
-    src: url("assets/fonts/CabinSketch-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: "Atma";
-    src: url("assets/fonts/Atma-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: "Atma";
-    src: url("assets/fonts/Atma-Light.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 300;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 800;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  /* CSS index */
-  .index {
-    position: relative;
-    width: auto;
-    background-image: url("assets/img/Background.jpg");
-    background-size: cover;
-    flex-wrap: nowrap;
-    display: flex;
-  }
-
-  h1 {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    font-family: Cabin Sketch;
-    font-weight: 300;
-    font-size: 11vw;
-
-    letter-spacing: 0;
-    line-height: 1.1;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    color: #04526c;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  .playButton {
-    display: flex;
-    flex-flow: column wrap;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    gap: 2rem;
-  }
-
-  #name {
-    display: flex;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #04526c;
-    box-sizing: border-box;
-    border-radius: 15px;
-    width: 60vw;
-    height: 20vh;
-    font-family: "Montserrat";
-    font-style: normal;
-    text-align: center;
-    font-weight: 500;
-    font-size: 5vw;
-    line-height: 1.1;
-  }
-
-  #play {
-    display: flex;
-    color: #fff;
-    row-gap: 1rem;
-    width: 30vw;
-    height: 12vh;
-    background: linear-gradient(135.37deg,
-        rgba(0, 0, 0, 0.35) 42.86%,
-        rgba(255, 255, 255, 0.35) 134.17%),
-      #3996bc;
-    background-blend-mode: soft-light, normal;
-    box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
-    border-radius: 20px;
-    font-family: "Montserrat";
-    font-style: normal;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 3vw;
-    line-height: 1.1;
-    appearance: none;
-    backface-visibility: hidden;
-    box-sizing: border-box;
-    cursor: pointer;
-    outline: none;
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
-    transition: all 0.3s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-  }
-
-  #play:hover {
-    background-color: #0a5c7c;
-    opacity: 90%;
-    transform: translateY(0);
-    transition-duration: 0.35s;
-    box-shadow: rgba(18, 60, 187, 0.419) 0 6px 12px;
-  }
-
-  #play:active {
-    transform: translateY(2px);
-    transition-duration: 0.35s;
-  }
-
-  /* CSS Start */
-  .start {
-    position: relative;
-    background-image: url("assets/img/Background.jpg");
-    background-size: cover;
-    flex-wrap: nowrap;
-  }
-
-  h2 {
-    font-family: Atma;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10vw;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #04526c;
-    justify-content: center;
-    margin-top: 3%;
-  }
-
-  h3 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 5vw;
-    line-height: 1.1;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: #04526c;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -65px;
-  }
-
-  .level {
-    display: flex;
-    position: relative;
-    flex-flow: row wrap;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    gap: 2rem;
-    margin-top: -25px;
-  }
-
-  #buttonColors {
-    width: 20rem;
-    height: 20rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 5px solid #04526c;
-    box-sizing: border-box;
-    border-radius: 50px;
-    font-family: Atma;
-    font-style: light;
-    font-weight: 400;
-    font-size: 5vw;
-    line-height: 1.1;
-    color: #04526c;
-    cursor: pointer;
-  }
-
-  #buttonColors:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  #buttonColors:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  #buttonColors::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-  }
-
-  #buttonAnimals {
-    width: 20rem;
-    height: 20rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 5px solid #04526c;
-    box-sizing: border-box;
-    border-radius: 50px;
-    font-family: Atma;
-    font-style: light;
-    font-weight: 400;
-    font-size: 5vw;
-    line-height: 1.1;
-    color: #04526c;
-    cursor: pointer;
-  }
-
-  #buttonAnimals:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  #buttonAnimals:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  #buttonAnimals::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-  }
-
-  #buttonVerbs {
-    width: 20rem;
-    height: 20rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 5px solid #04526c;
-    box-sizing: border-box;
-    border-radius: 50px;
-    font-family: Atma;
-    font-style: light;
-    font-weight: 400;
-    font-size: 5vw;
-    line-height: 1.1;
-    color: #04526c;
-    cursor: pointer;
-  }
-
-  #buttonVerbs:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  #buttonVerbs:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  #buttonVerbs::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-  }
-
-  /* CSS General */
-  .header {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-content: center;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffff;
-    opacity: 0.6;
-    border-radius: 25px;
-    height: 120px;
-  }
-
-  .title {
-    /*flex-basis: 80%;*/
-    color: #04526c;
-    font-family: Cabin Sketch;
-    font-size: 7rem;
-    font-weight: 300;
-    flex-wrap: nowrap;
-  }
-
-  #timer {
-    /*flex-basis: 20%;*/
-    position: absolute;
-    right: 10%;
-    color: #04526c;
-    font-family: Montserrat;
-    font-weight: 600;
-    font-size: 4rem;
-    position: right;
-  }
-
-  /* CSS Cards  */
-
-  section {
-    display: grid;
-    position: relative;
-    flex-wrap: wrap;
-    grid-auto-flow: dense;
-    grid-template-columns: repeat(4, 7rem);
-    grid-template-rows: repeat(2, 7rem);
-    grid-gap: 8rem;
-    perspective: 1000px;
-    padding: 2rem;
-    transform: rotateY(0deg);
-  }
-
-  .face {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: aliceblue;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    transform: scaleX(-1);
-    pointer-events: none;
-  }
-
-  .card {
-    height: 12.5rem;
-    width: 12.5rem;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: rotateY(0deg);
-    transform: rotateX(0deg);
-    cursor: pointer;
-  }
-
-  @media (min-width: 320px) {
-    .card { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  .toggleCard {
-    transform: rotateY(180deg);
-    position: relative;
-  }
-
-  /* CSS Memory Colors */
-
-  .memoryColors {
-    position: relative;
-    background-image: url("assets/img/Colors.jpg");
-    background-size: cover;
-    flex-wrap: wrap;
-  }
-
-  .backColors {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background: conic-gradient(from 180deg at 50% 50%,
-        #fff2c6 0deg,
-        #d8a9ff 360deg),
-      #ffffff;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    backface-visibility: hidden;
-    pointer-events: none;
-  }
-
-  .scoreColors {
-    position: relative;
-    display: flex;
-    width: 381px;
-    height: 77px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 1.1;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    background: #8e049a;
-    border-radius: 15px;
-    flex-direction: flex-end;
-  }
-
-  /* CSS Memory Animals */
-
-  .animalBackground {
-    background-image: url("assets/img/animals.jpg");
-    background-size: cover;
-  }
-
-  .backAnimals {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: conic-gradient(from 180deg at 50% 50%,
-        #edff7b 0deg,
-        #ed6961 360deg),
-      #ffffff;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    backface-visibility: hidden;
-    pointer-events: none;
-  }
-
-  .scoreAnimals {
-    position: relative;
-    display: flex;
-    width: 381px;
-    height: 77px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 1.1;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    background: #ec7513;
-    border-radius: 15px;
-    flex-direction: flex-end;
-  }
-
-  /* CSS Memory Verbs */
-
-  .memoryVerbs {
-    position: relative;
-    background-image: url("assets/img/Verbs.jpg");
-    background-size: cover;
-    flex-wrap: wrap;
-    width: auto;
-  }
-
-  .backVerbs {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: conic-gradient(from 180deg at 50% 50%,
-        #bcfff3 0deg,
-        #3acbea 360deg),
-      #ffffff;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    backface-visibility: hidden;
-    pointer-events: none;
-  }
-
-  .scoreVerbs {
-    position: relative;
-    display: flex;
-    width: 381px;
-    height: 77px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 1.1;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    background: #2db0cc;
-    border-radius: 15px;
-    flex-direction: flex-end;
-  }
-
-  .modal {
-    width: 1000px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 6px solid #000000;
-    box-sizing: border-box;
-    border-radius: 30px;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .modal::backdrop {
-    background-color: #ffffff;
-    opacity: 0.3;
-  }
-
-  .congrats {
-    font-family: "Atma";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 7vw;
-    line-height: 1.1;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #04526c;
-    margin-top: 60px;
-  }
-
-  #finalScore {
-    font-family: "Montserrat";
-    font-weight: 800;
-    font-size: 4vw;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #04526c
-  }
-
-=======
->>>>>>> c57795294c070eafd1f134510516be98f2dde838
-  .modalButtons {
-    display: flex;
-    position: relative;
-    flex-flow: row wrap;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: space-around;
-    gap: 3rem;
-  }
-
-  .modalButton {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2vw;
-    line-height: 58px;
-    color: #ffffff;
-    padding: 10px 40px;
-    margin: 0px 10px 10px 0px;
-    background: linear-gradient(135.37deg,
-        rgba(0, 0, 0, 0.35) 42.86%,
-        rgba(255, 255, 255, 0.35) 134.17%),
-      #3996bc;
-    background-blend-mode: soft-light, normal;
-    box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
-    border-radius: 20px;
-  }
-
-  .modalButton:hover,
-  .modalButton:active {
-    -webkit-transform: translate(0px, 5px);
-    -ms-transform: translate(0px, 5px);
-    transform: translate(0px, 5px);
-    border-bottom: 1px solid #256680;
-  }
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> c57795294c070eafd1f134510516be98f2dde838
