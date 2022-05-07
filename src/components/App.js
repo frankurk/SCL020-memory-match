@@ -3,6 +3,7 @@ import colors from "../data/colors/colors.js";
 import animals from "../data/animals/animals.js";
 import verbs from "../data/verbs/verbs.js";
 import shuffle from "./shuffle.js";
+import { createCards } from "./domFunctions.js";
 
 const colorssection = document.getElementById("colorssection");
 const animalssection = document.getElementById("animalssection");
@@ -20,11 +21,11 @@ const goToStart = document.getElementById("goToStart");
 
 //Botón jugar obtiene valor para próxima página y dirige a la siguiente página
 if (buttonPlay) {
-  document.getElementById("play").onclick = function () {
+  document.getElementById("play").addEventListener("click", () => {
     location.href = "start.html";
     let name = document.getElementById("name").value;
     localStorage.setItem("name", name);
-  };
+  });
 }
 
 // Muestra el valor de la página anterior
@@ -68,19 +69,7 @@ const App = () => {
   if (colorssection) {
     const randomizedItems = shuffle(colors.items);
     for (const item of randomizedItems) {
-      const card = document.createElement("div");
-      const face = document.createElement("img");
-      const back = document.createElement("div");
-      card.classList.value = "card";
-      face.classList.value = "face";
-      back.classList.value = "backColors";
-
-      face.src = item.image;
-      card.setAttribute("id", item.id);
-
-      colorssection.appendChild(card);
-      card.appendChild(face);
-      card.appendChild(back);
+      const card = createCards(item.image, item.id, "backColors");
 
       card.addEventListener("click", () => {
         if (!isWaiting) {
@@ -93,6 +82,8 @@ const App = () => {
         }
         firstClick = true;
       });
+
+      colorssection.appendChild(card);
     }
   }
 
@@ -100,19 +91,7 @@ const App = () => {
   if (animalssection) {
     const randomizedItems = shuffle(animals.items);
     for (const item of randomizedItems) {
-      const card = document.createElement("div");
-      const face = document.createElement("img");
-      const back = document.createElement("div");
-      card.classList.value = "card";
-      face.classList.value = "face";
-      back.classList.value = "backAnimals";
-
-      face.src = item.image;
-      card.setAttribute("id", item.id);
-
-      animalssection.appendChild(card);
-      card.appendChild(face);
-      card.appendChild(back);
+      const card = createCards(item.image, item.id, "backAnimals");
 
       card.addEventListener("click", () => {
         if (!isWaiting) {
@@ -125,6 +104,7 @@ const App = () => {
         }
         firstClick = true;
       });
+      animalssection.appendChild(card);
     }
   }
 
@@ -132,19 +112,7 @@ const App = () => {
   if (verbssection) {
     const randomizedItems = shuffle(verbs.items);
     for (const item of randomizedItems) {
-      const card = document.createElement("div");
-      const face = document.createElement("img");
-      const back = document.createElement("div");
-      card.classList.value = "card";
-      face.classList.value = "face";
-      back.classList.value = "backVerbs";
-
-      face.src = item.image;
-      card.setAttribute("id", item.id);
-
-      verbssection.appendChild(card);
-      card.appendChild(face);
-      card.appendChild(back);
+      const card = createCards(item.image, item.id, "backVerbs");
 
       card.addEventListener("click", () => {
         if (!isWaiting) {
@@ -157,6 +125,7 @@ const App = () => {
         }
         firstClick = true;
       });
+      verbssection.appendChild(card);
     }
   }
 };
