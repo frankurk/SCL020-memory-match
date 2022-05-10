@@ -1,4 +1,4 @@
-import App, {createSection} from "./App.js";
+import App, {playSound} from "./App.js";
 
 
 describe("App function", () => {
@@ -6,12 +6,10 @@ describe("App function", () => {
     expect(typeof App).toBe("function");
   })
 })
- 
- describe("createSection function that create", () => {
-   it("should create a section", () => {
-    const randomizedItems = [{image: "img.jpg", id: "color"}, {image: "img2.jpg", id: "animals"}, {image: "img3.jpg", id: "verbs"}];
-    const section = document.createElement("div");
-    const backCard = "backCard";
-    expect(createSection(randomizedItems, section, backCard) instanceof HTMLElement).toBe(true);
-   })
- })
+
+describe("Sound function", () => {
+  it("should be a HTMLAudioElement", () => {
+    let congrats = "assets/sounds/congrats.mp3";
+    expect(playSound(congrats) instanceof HTMLAudioElement);
+  });
+});
