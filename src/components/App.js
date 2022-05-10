@@ -5,133 +5,133 @@ import verbs from "../data/verbs/verbs.js";
 import shuffle from "./shuffle.js";
 import { createCards } from "./domFunctions.js";
 
-const colorssection = document.getElementById("colorssection");
-const animalssection = document.getElementById("animalssection");
-const verbssection = document.getElementById("verbssection");
-const buttonPlay = document.getElementById("play");
-const getUserName = document.getElementById("hi");
-const buttonColors = document.getElementById("buttonColors");
-const buttonAnimals = document.getElementById("buttonAnimals");
-const buttonVerbs = document.getElementById("buttonVerbs");
+//Indica si se ha dado el primer click
 let firstClick = false;
-const playAgain = document.getElementById("playAgain");
-const nextLevelAnimals = document.getElementById("nextLevelAnimals");
-const nextLevelVerbs = document.getElementById("nextLevelVerbs");
-const goToStart = document.getElementById("goToStart");
-
-//Botón jugar obtiene valor para próxima página y dirige a la siguiente página
-if (buttonPlay) {
-  document.getElementById("play").addEventListener("click", () => {
-    location.href = "start.html";
-    let name = document.getElementById("name").value;
-    localStorage.setItem("name", name);
-  });
-}
-
-// Muestra el valor de la página anterior
-if (getUserName) {
-  window.onload = function () {
-    document.getElementById("hi").innerHTML = `¡Hola ${localStorage.getItem(
-      "name"
-    )}!`;
-  };
-}
-
-// Dirige al Memory de Colores
-if (buttonColors) {
-  document.getElementById("buttonColors").onclick = function () {
-    location.href = "memorycolors.html";
-  };
-}
-
-// Dirige al Memory de Animales
-if (buttonAnimals) {
-  document.getElementById("buttonAnimals").onclick = function () {
-    location.href = "memoryanimals.html";
-  };
-}
-
-// Dirige al Memory de Verbos
-if (buttonVerbs) {
-  document.getElementById("buttonVerbs").onclick = function () {
-    location.href = "memoryverbs.html";
-  };
-}
 
 //Da tiempo entre volteo de cartas
 let isWaiting = false;
 
-//Modal
-const modal = document.querySelector("#modal");
+export const createSection = (randomizedItems, section, backCard) => {
+  for (const item of randomizedItems) {
+    const card = createCards(item.image, item.id, backCard);
+
+    card.addEventListener("click", () => {
+      if (!isWaiting) {
+        card.classList.toggle("toggleCard");
+        card.classList.add("flipped");
+        checkCards();
+      }
+    });
+    section.appendChild(card);
+  }
+};
 
 const App = () => {
+  //Botón jugar obtiene valor para próxima página y dirige a la siguiente página
+  const buttonPlay = document.getElementById("play");
+  if (buttonPlay) {
+    document.getElementById("play").addEventListener("click", () => {
+      location.href = "start.html";
+      let name = document.getElementById("name").value;
+      localStorage.setItem("name", name);
+    });
+  }
+
+  // Muestra el valor de la página anterior
+  const getUserName = document.getElementById("hi");
+  if (getUserName) {
+    window.onload = function () {
+      document.getElementById("hi").innerHTML = `¡Hola ${localStorage.getItem(
+        "name"
+      )}!`;
+    };
+  }
+
+  // Dirige al Memory de Colores
+  const buttonColors = document.getElementById("buttonColors");
+  if (buttonColors) {
+    document.getElementById("buttonColors").onclick = function () {
+      location.href = "memorycolors.html";
+    };
+  }
+
+  // Dirige al Memory de Animales
+  const buttonAnimals = document.getElementById("buttonAnimals");
+  if (buttonAnimals) {
+    document.getElementById("buttonAnimals").onclick = function () {
+      location.href = "memoryanimals.html";
+    };
+  }
+
+  // Dirige al Memory de Verbos
+  const buttonVerbs = document.getElementById("buttonVerbs");
+  if (buttonVerbs) {
+    document.getElementById("buttonVerbs").onclick = function () {
+      location.href = "memoryverbs.html";
+    };
+  }
+
+  //* Botones del modal
+  const playAgain = document.getElementById("playAgain");
+  if (playAgain) {
+    document.getElementById("playAgain").addEventListener("click", () => {
+      window.location.reload();
+    });
+  }
+
+  //Botón para el siguiente nivel: Animals
+  const nextLevelAnimals = document.getElementById("nextLevelAnimals");
+  if (nextLevelAnimals) {
+    document.getElementById("nextLevelAnimals").onclick = function () {
+      location.href = "memoryanimals.html";
+    };
+  }
+
+  //Botón para el siguiente nivel: Verbs
+  const nextLevelVerbs = document.getElementById("nextLevelVerbs");
+  if (nextLevelVerbs) {
+    document.getElementById("nextLevelVerbs").onclick = function () {
+      location.href = "memoryverbs.html";
+    };
+  }
+
+  //Botón para volver a la pantalla de niveles
+  const goToStart = document.getElementById("goToStart");
+  if (goToStart) {
+    document.getElementById("goToStart").onclick = function () {
+      location.href = "start.html";
+    };
+  }
+
   //Memory Colors
+  const colorssection = document.getElementById("colorssection");
   if (colorssection) {
     const randomizedItems = shuffle(colors.items);
-    for (const item of randomizedItems) {
-      const card = createCards(item.image, item.id, "backColors");
-
-      card.addEventListener("click", () => {
-        if (!isWaiting) {
-          card.classList.toggle("toggleCard");
-          card.classList.add("flipped");
-          checkCards();
-        }
-        if (!firstClick) {
-          time();
-        }
-        firstClick = true;
-      });
-
-      colorssection.appendChild(card);
-    }
+    createSection(randomizedItems, colorssection, "backColors");
   }
 
   //Memory Animals
+  const animalssection = document.getElementById("animalssection");
   if (animalssection) {
     const randomizedItems = shuffle(animals.items);
-    for (const item of randomizedItems) {
-      const card = createCards(item.image, item.id, "backAnimals");
-
-      card.addEventListener("click", () => {
-        if (!isWaiting) {
-          card.classList.toggle("toggleCard");
-          card.classList.add("flipped");
-          checkCards();
-        }
-        if (!firstClick) {
-          time();
-        }
-        firstClick = true;
-      });
-      animalssection.appendChild(card);
-    }
+    createSection(randomizedItems, animalssection, "backAnimals");
   }
 
   // Memory Verbos
+  const verbssection = document.getElementById("verbssection");
   if (verbssection) {
     const randomizedItems = shuffle(verbs.items);
-    for (const item of randomizedItems) {
-      const card = createCards(item.image, item.id, "backVerbs");
-
-      card.addEventListener("click", () => {
-        if (!isWaiting) {
-          card.classList.toggle("toggleCard");
-          card.classList.add("flipped");
-          checkCards();
-        }
-        if (!firstClick) {
-          time();
-        }
-        firstClick = true;
-      });
-      verbssection.appendChild(card);
-    }
+    createSection(randomizedItems, verbssection, "backVerbs");
   }
 };
 
 //Voltear cartas
 const checkCards = () => {
+  if (!firstClick) {
+    time();
+    firstClick = true;
+  }
+
   const flippedCards = document.querySelectorAll(".flipped");
   const matchedCards = document.querySelectorAll(".matched");
 
@@ -157,6 +157,8 @@ const checkCards = () => {
       }
     }, 1000);
     if (matchedCards.length === 6) {
+      //Modal
+      const modal = document.querySelector("#modal");
       modal.showModal();
       if (timer) clearInterval(timer);
       congratulations();
@@ -166,11 +168,15 @@ const checkCards = () => {
 
 //* Mensaje al ganar
 const congratulations = () => {
-  document.getElementById("congrats").innerHTML = `¡Felicidades ${localStorage.getItem("name")}!`;
-  document.getElementById("finalScore").innerHTML = `Tu puntaje fue ${counter} puntos`;
-}
+  document.getElementById(
+    "congrats"
+  ).innerHTML = `¡Felicidades ${localStorage.getItem("name")}!`;
+  document.getElementById(
+    "finalScore"
+  ).innerHTML = `Tu puntaje fue ${counter} puntos`;
+};
 
-//* Timer y puntaje 
+//* Timer y puntaje
 let counter = 100;
 let timer = null;
 const time = () => {
@@ -192,31 +198,6 @@ const time = () => {
     document.getElementById("timer").innerHTML = `${MM}:${SS}`;
     document.getElementById("score").innerHTML = `Score: ${counter}`;
   }, 1000);
-}
-
-//* Botones del modal
-if (playAgain) {
-  document.getElementById("playAgain").addEventListener("click", () => {
-    window.location.reload();
-  });
-}
-
-if (nextLevelAnimals) {
-  document.getElementById("nextLevelAnimals").onclick = function () {
-    location.href = "memoryanimals.html";
-  };
-}
-
-if (nextLevelVerbs) {
-  document.getElementById("nextLevelVerbs").onclick = function () {
-    location.href = "memoryverbs.html";
-  };
-}
-
-if (goToStart) {
-  document.getElementById("goToStart").onclick = function () {
-    location.href = "start.html";
-  };
-}
+};
 
 export default App;
