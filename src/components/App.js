@@ -160,6 +160,7 @@ const checkCards = () => {
       //Modal
       const modal = document.querySelector("#modal");
       modal.showModal();
+      playSound();
       if (timer) clearInterval(timer);
       congratulations();
     }
@@ -176,10 +177,13 @@ const congratulations = () => {
   ).innerHTML = `Tu puntaje fue ${counter} puntos`;
 };
 
+//Playsound
+export const playSound = () => new Audio("assets/sounds/congrats.mp3").play();
+
 //* Timer y puntaje
 let counter = 100;
 let timer = null;
-const time = () => {
+export const time = () => {
   let secs = 0;
   let mins = 0;
   let SS;
