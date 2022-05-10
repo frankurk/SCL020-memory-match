@@ -11,7 +11,7 @@ let firstClick = false;
 //Da tiempo entre volteo de cartas
 let isWaiting = false;
 
-const createSection = (randomizedItems, section, backCard) => {
+export const createSection = (randomizedItems, section, backCard) => {
   for (const item of randomizedItems) {
     const card = createCards(item.image, item.id, backCard);
 
