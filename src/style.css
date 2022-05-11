@@ -33,10 +33,10 @@
   font-weight: 800;
 }
 
-* {
+/* * {
   box-sizing: border-box;
   border: 1px solid #ed6961
-}
+} */
 
 body {
   display: flex;
