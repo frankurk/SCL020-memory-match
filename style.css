@@ -1,0 +1,600 @@
+@font-face {
+  font-family: "Cabin Sketch";
+  src: url("assets/fonts/CabinSketch-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Atma";
+  src: url("assets/fonts/Atma-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Atma";
+  src: url("assets/fonts/Atma-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
+
+/* * {
+  box-sizing: border-box;
+  border: 1px solid #ed6961
+} */
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* CSS index */
+.index {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 5%;
+  background-image: url("assets/img/Background.jpg");
+  background-size: cover;
+  flex-wrap: nowrap;
+  background-color: #feeed7;
+  overflow: hidden;
+}
+
+h1 {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: Cabin Sketch;
+  font-weight: 300;
+  font-size: 10vw;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  color: #04526c;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.playButton {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+#name {
+  display: flex;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 15px;
+  width: 80%;
+  height: auto;
+  font-family: "Montserrat";
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 4vw;
+  line-height: 1;
+}
+
+#play {
+  display: flex;
+  color: #fff;
+  row-gap: 1rem;
+  width: 35%;
+  height: auto;
+  background: linear-gradient(135.37deg,
+      rgba(0, 0, 0, 0.35) 42.86%,
+      rgba(255, 255, 255, 0.35) 134.17%),
+    #3996bc;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
+  border-radius: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2.5vw;
+  line-height: 1.5;
+  appearance: none;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+#play:hover {
+  background-color: #0a5c7c;
+  opacity: 90%;
+  transform: translateY(0);
+  transition-duration: 0.35s;
+  box-shadow: rgba(18, 60, 187, 0.419) 0 6px 12px;
+}
+
+#play:active {
+  transform: translateY(2px);
+  transition-duration: 0.35s;
+}
+
+/* CSS Start */
+.start {
+  position: relative;
+  background-image: url("assets/img/Background.jpg");
+  background-size: cover;
+  flex-wrap: nowrap;
+  background-color: #feeed7;
+}
+
+h2 {
+  font-family: Cabin Sketch;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c;
+  justify-content: center;
+  margin: 2%;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4.5vw;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #04526c;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 1%;
+}
+
+.level {
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: space-around;
+}
+
+.buttonLevels {
+  width: 20%;
+  position: relative;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid #04526c;
+  box-sizing: border-box;
+  border-radius: 50px;
+  font-family: Atma;
+  font-style: light;
+  font-weight: 400;
+  font-size: 5vw;
+  text-align: center;
+  color: #04526c;
+  cursor: pointer;
+}
+
+.buttonLevels:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.buttonLevels:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.buttonLevels::after {
+  content: "";
+  display: inline-block;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  display: block;
+}
+
+/* CSS General */
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffff;
+  opacity: 0.6;
+  border-radius: 25px;
+  height: 15vh;
+}
+
+.title {
+  display: flex;
+  position: relative;
+  color: #04526c;
+  font-family: Cabin Sketch;
+  font-size: 15vh;
+  font-weight: 300;
+  pointer-events: none;
+}
+
+#timer {
+  display: flex;
+  position: relative;
+  color: #ffffff;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 3vw;
+  margin: 2px;
+  pointer-events: none;
+}
+
+/* CSS Cards  */
+
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+  /*grid-auto-flow: dense;*/
+  /* grid-template-columns: repeat(4, 7rem);
+  grid-template-rows: repeat(2, 7rem);*/
+  gap: 2%;
+  perspective: 1000px;
+  padding: 0;
+  margin: 0;
+  transform: rotateY(0deg);
+  width: 90%;
+  height: 40%;
+}
+
+.face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: aliceblue;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  transform: scaleX(-1);
+  pointer-events: none;
+}
+
+.card {
+  width: 15vw;
+  height: 30vh;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: rotateY(0deg);
+  transform: rotateX(0deg);
+  cursor: pointer;
+  margin: 1%;
+}
+
+.toggleCard {
+  transform: rotateY(180deg);
+  position: relative;
+}
+
+/* CSS Memory Colors */
+
+.memoryColors {
+  background-image: url("assets/img/Colors.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.backColors {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #fff2c6 0deg,
+      #d8a9ff 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.scoreColors {
+  position: relative;
+  display: flex;
+  width: 26vw;
+  height: 7vh;
+  margin-top: 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3vw;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #8e049a;
+  border-radius: 15px;
+  flex-direction: flex-end;
+  pointer-events: none;
+}
+
+/* CSS Memory Animals */
+
+.animalBackground {
+  background-image: url("assets/img/animals.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.backAnimals {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #edff7b 0deg,
+      #ed6961 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.scoreAnimals {
+  position: relative;
+  display: flex;
+  width: 26vw;
+  height: 7vh;
+  margin-top: 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3vw;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(236, 117, 19, 0.8);
+  border-radius: 15px;
+  flex-direction: flex-end;
+  pointer-events: none;
+}
+
+/* CSS Memory Verbs */
+
+.memoryVerbs {
+  background-image: url("assets/img/Verbs.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.backVerbs {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(from 180deg at 50% 50%,
+      #bcfff3 0deg,
+      #3acbea 360deg),
+    #ffffff;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.scoreVerbs {
+  position: relative;
+  display: flex;
+  width: 26vw;
+  height: 7vh;
+  margin-top: 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3vw;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #2db0cc;
+  border-radius: 15px;
+  flex-direction: flex-end;
+  pointer-events: none;
+}
+
+.modal {
+  width: 70vw;
+  height: 63vh;
+  background: rgba(255, 255, 255);
+  border: 6px solid #000000;
+  box-sizing: border-box;
+  border-radius: 30px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.modal::backdrop {
+  background-color: #ffffff;
+  opacity: 0.3;
+}
+
+.congrats {
+  font-family: "Atma";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 7vw;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c;
+  margin-top: 40px;
+  pointer-events: none;
+}
+
+#finalScore {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-size: 3.5vw;
+  line-height: 2;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #04526c;
+  pointer-events: none;
+}
+
+.modalButtons {
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: space-around;
+  gap: 1%;
+}
+
+.modalButton {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vw;
+  line-height: 1.2;
+  color: #ffffff;
+  padding: 2% 8%;
+  margin: 0px 10px 10px 0px;
+  background: linear-gradient(135.37deg,
+      rgba(0, 0, 0, 0.35) 42.86%,
+      rgba(255, 255, 255, 0.35) 134.17%),
+    #3996bc;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -5px -5px 10px #fafbff, 5px 5px 10px #a6abbd;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.modalButton:hover,
+.modalButton:active {
+  -webkit-transform: translate(0px, 5px);
+  -ms-transform: translate(0px, 5px);
+  transform: translate(0px, 5px);
+  border-bottom: 1px solid #256680;
+}
+
+@media (max-width: 562px) and (orientation: portrait) {
+  .index {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: 50%;
+  }
+
+  .start {
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  h2 {
+    font-size: 9vh;
+  }
+
+  .buttonLevels {
+    width: 45%;
+    padding-bottom: 15%;
+    padding-top: 15%;
+    margin: 2.6%;
+  }
+
+  .title {
+    font-size: 9vh;
+  }
+
+  .header {
+    height: 9vh;
+  }
+
+  .card {
+    width: 29vw;
+    height: 16vh;
+  }
+
+  #finalScore {
+    line-height: 3;
+  }
+
+  #congrats {
+    margin-top: 35%;
+
+  }
+
+  .modalButton {
+    font-size: 2vh;
+    margin-top: 10%;
+    line-height: 2;
+  }
+}
+/* @media (max-width: 480px) and (orientation: landscape) {
+.card {
+width: 2vw;}
+
+}
+ */
