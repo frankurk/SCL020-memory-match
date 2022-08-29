@@ -1,4 +1,4 @@
-# PROJECT MEMORY MATCH
+# Memory Match
 
 “Memory Match” is a game where you have a set of cards to match according to their meaning. This game is a variation of the original one, as you do not have to match identical cards; instead, you match an image with the English word that represents it. The game consists of 3 levels, divided into the categories of colors, animals, and verbs.
 ## Description
