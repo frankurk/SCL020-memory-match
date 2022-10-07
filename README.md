@@ -9,6 +9,6 @@
 
 **Font**: Atma - CabinSketch -Montserrat
 
-## Usage
+## Demo
 
 <img src="memorymatch-usage.gif">
