@@ -1,10 +1,10 @@
 import animals from "../data/animals/animals";
-import shuffle from "./shuffle";
+import shuffleCards from "./shuffle";
 
-describe("shuffle", () => {
+describe("function to shuffle", () => {
   it("should randomize items", () => {
     const stockItems = [...animals.items];
-    const randomizedItems = shuffle(animals.items);
+    const randomizedItems = shuffleCards(animals.items);
 
     try {
       expect(randomizedItems[0]).not.toEqual(stockItems[0]);

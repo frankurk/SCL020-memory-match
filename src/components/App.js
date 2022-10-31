@@ -1,14 +1,10 @@
-/* eslint-disable no-unused-vars */
 import colors from "../data/colors/colors.js";
 import animals from "../data/animals/animals.js";
 import verbs from "../data/verbs/verbs.js";
-import shuffle from "./shuffle.js";
+import shuffleCards from "./shuffle.js";
 import { createCards } from "./domFunctions.js";
 
-//Indica si se ha dado el primer click
 let firstClick = false;
-
-//Da tiempo entre volteo de cartas
 let isWaiting = false;
 
 export const createSection = (randomizedItems, section, backCard) => {
@@ -27,7 +23,7 @@ export const createSection = (randomizedItems, section, backCard) => {
 };
 
 const App = () => {
-  //Botón jugar obtiene valor para próxima página y dirige a la siguiente página
+
   const buttonPlay = document.getElementById("play");
   if (buttonPlay) {
     document.getElementById("play").addEventListener("click", () => {
@@ -37,7 +33,6 @@ const App = () => {
     });
   }
 
-  // Muestra el valor de la página anterior
   const getUserName = document.getElementById("hi");
   if (getUserName) {
     window.onload = function () {
@@ -47,39 +42,34 @@ const App = () => {
     };
   }
 
-  // Dirige al Memory de Colores
-  const buttonColors = document.getElementById("buttonColors");
-  if (buttonColors) {
+  const buttonToColorsSection = document.getElementById("buttonColors");
+  if (buttonToColorsSection) {
     document.getElementById("buttonColors").onclick = function () {
       location.href = "memorycolors.html";
     };
   }
 
-  // Dirige al Memory de Animales
-  const buttonAnimals = document.getElementById("buttonAnimals");
-  if (buttonAnimals) {
+  const buttonToAnimalsSection = document.getElementById("buttonAnimals");
+  if (buttonToAnimalsSection) {
     document.getElementById("buttonAnimals").onclick = function () {
       location.href = "memoryanimals.html";
     };
   }
 
-  // Dirige al Memory de Verbos
-  const buttonVerbs = document.getElementById("buttonVerbs");
-  if (buttonVerbs) {
+  const buttonToVerbsSection = document.getElementById("buttonVerbs");
+  if (buttonToVerbsSection) {
     document.getElementById("buttonVerbs").onclick = function () {
       location.href = "memoryverbs.html";
     };
   }
 
-  //* Botones del modal
-  const playAgain = document.getElementById("playAgain");
-  if (playAgain) {
+  const playAgainButton = document.getElementById("playAgain");
+  if (playAgainButton) {
     document.getElementById("playAgain").addEventListener("click", () => {
       window.location.reload();
     });
   }
 
-  //Botón para el siguiente nivel: Animals
   const nextLevelAnimals = document.getElementById("nextLevelAnimals");
   if (nextLevelAnimals) {
     document.getElementById("nextLevelAnimals").onclick = function () {
@@ -87,7 +77,6 @@ const App = () => {
     };
   }
 
-  //Botón para el siguiente nivel: Verbs
   const nextLevelVerbs = document.getElementById("nextLevelVerbs");
   if (nextLevelVerbs) {
     document.getElementById("nextLevelVerbs").onclick = function () {
@@ -95,37 +84,32 @@ const App = () => {
     };
   }
 
-  //Botón para volver a la pantalla de niveles
-  const goToStart = document.getElementById("goToStart");
-  if (goToStart) {
+  const goToStartButton = document.getElementById("goToStart");
+  if (goToStartButton) {
     document.getElementById("goToStart").onclick = function () {
       location.href = "start.html";
     };
   }
 
-  //Memory Colors
-  const colorssection = document.getElementById("colorssection");
-  if (colorssection) {
-    const randomizedItems = shuffle(colors.items);
-    createSection(randomizedItems, colorssection, "backColors");
+  const colorsSection = document.getElementById("colorssection");
+  if (colorsSection) {
+    const randomizedItems = shuffleCards(colors.items);
+    createSection(randomizedItems, colorsSection, "backColors");
   }
 
-  //Memory Animals
-  const animalssection = document.getElementById("animalssection");
-  if (animalssection) {
-    const randomizedItems = shuffle(animals.items);
-    createSection(randomizedItems, animalssection, "backAnimals");
+  const animalsSection = document.getElementById("animalssection");
+  if (animalsSection) {
+    const randomizedItems = shuffleCards(animals.items);
+    createSection(randomizedItems, animalsSection, "backAnimals");
   }
 
-  // Memory Verbos
-  const verbssection = document.getElementById("verbssection");
-  if (verbssection) {
-    const randomizedItems = shuffle(verbs.items);
-    createSection(randomizedItems, verbssection, "backVerbs");
+  const verbsSection = document.getElementById("verbssection");
+  if (verbsSection) {
+    const randomizedItems = shuffleCards(verbs.items);
+    createSection(randomizedItems, verbsSection, "backVerbs");
   }
 };
 
-//Voltear cartas
 const checkCards = () => {
   if (!firstClick) {
     time();
@@ -135,7 +119,6 @@ const checkCards = () => {
   const flippedCards = document.querySelectorAll(".flipped");
   const matchedCards = document.querySelectorAll(".matched");
 
-  //Voltear dos cartas
   if (flippedCards.length === 2) {
     isWaiting = true;
     setTimeout(() => {
@@ -157,31 +140,28 @@ const checkCards = () => {
       }
     }, 1000);
     if (matchedCards.length === 6) {
-      //Modal
+    
       const modal = document.querySelector("#modal");
       modal.showModal();
       playSound();
       if (timer) clearInterval(timer);
-      congratulations();
+      congratulationsMessage();
     }
   }
 };
 
-//* Mensaje al ganar
-const congratulations = () => {
+const congratulationsMessage = () => {
   document.getElementById(
     "congrats"
   ).innerHTML = `¡Felicidades ${localStorage.getItem("name")}!`;
   document.getElementById(
     "finalScore"
-  ).innerHTML = `Tu puntaje fue ${counter} puntos`;
+  ).innerHTML = `Tu puntaje fue ${pointsCounter} puntos`;
 };
 
-//Playsound
 export const playSound = () => new Audio("assets/sounds/congrats.mp3").play();
 
-//* Timer y puntaje
-let counter = 100;
+let pointsCounter = 100;
 let timer = null;
 export const time = () => {
   let secs = 0;
@@ -190,7 +170,7 @@ export const time = () => {
   let MM;
   timer = setInterval(() => {
     secs++;
-    counter--;
+    pointsCounter--;
     if (secs == 60) {
       secs = 0;
       mins++;
@@ -200,7 +180,7 @@ export const time = () => {
     mins < 10 ? (MM = `0${mins}`) : (SS = `${mins}`);
 
     document.getElementById("timer").innerHTML = `${MM}:${SS}`;
-    document.getElementById("score").innerHTML = `Score: ${counter}`;
+    document.getElementById("score").innerHTML = `Score: ${pointsCounter}`;
   }, 1000);
 };
 

@@ -1,6 +1,6 @@
-const shuffle = (items) => {
+const shuffleCards = (items) => {
  const randomItems = items.sort(() => Math.random() - 0.5);
  return randomItems;
 }
 
-export default shuffle;
+export default shuffleCards;
