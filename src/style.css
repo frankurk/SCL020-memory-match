@@ -33,11 +33,6 @@
   font-weight: 800;
 }
 
-/* * {
-  box-sizing: border-box;
-  border: 1px solid #ed6961
-} */
-
 body {
   display: flex;
   flex-direction: column;
@@ -277,16 +272,12 @@ h3 {
 }
 
 /* CSS Cards  */
-
 section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   position: relative;
-  /*grid-auto-flow: dense;*/
-  /* grid-template-columns: repeat(4, 7rem);
-  grid-template-rows: repeat(2, 7rem);*/
   gap: 2%;
   perspective: 1000px;
   padding: 0;
@@ -327,7 +318,6 @@ section {
 }
 
 /* CSS Memory Colors */
-
 .memoryColors {
   background-image: url("assets/img/Colors.jpg");
   background-size: cover;
@@ -371,7 +361,6 @@ section {
 }
 
 /* CSS Memory Animals */
-
 .animalBackground {
   background-image: url("assets/img/animals.jpg");
   background-size: cover;
@@ -415,7 +404,6 @@ section {
 }
 
 /* CSS Memory Verbs */
-
 .memoryVerbs {
   background-image: url("assets/img/Verbs.jpg");
   background-size: cover;
@@ -592,9 +580,3 @@ section {
     line-height: 2;
   }
 }
-/* @media (max-width: 480px) and (orientation: landscape) {
-.card {
-width: 2vw;}
-
-}
- */
